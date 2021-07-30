@@ -34,7 +34,7 @@ function App() {
             <> 
              <Switch>
                 <Route exact path="/">
-                    Home PAGE COMPONENT WOULD GO HEREE
+                    Home PAGE COMPONENT WOULD GO HERE
                 </Route>
             </Switch>
             </>

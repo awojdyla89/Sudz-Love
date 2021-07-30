@@ -12,6 +12,7 @@ module.exports = {
 };
 
 function signup(req, res) {
+  console.log('hitting signup router in controller:-->')
   console.log(req.body, req.file)
 
   //////////////////////////////////////////////////////////////////////////////////

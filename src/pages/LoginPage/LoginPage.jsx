@@ -10,7 +10,7 @@ export default function LoginPage(props){
     return (
       
           
-             <h1>setup signup PAGE</h1>
+             <h1>setup Login PAGE</h1>
     
       
       );
