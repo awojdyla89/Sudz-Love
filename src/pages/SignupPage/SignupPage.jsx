@@ -41,7 +41,7 @@ export default function SignUpPage(props){
             // after you get a response from the server from 
             // the signup request, you need to grab the token from 
             // local storage and set the user!
-            props.handleSignupOrLogin()
+            props.handleSignUpOrLogin()
             history.push('/')
           
           

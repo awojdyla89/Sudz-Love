@@ -4,6 +4,7 @@ import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService'
+import MainPage from '../MainPage/MainPage';
 
 
 function App() {
@@ -30,17 +31,17 @@ function App() {
           <Route exact path="/signup">
              <SignupPage handleSignUpOrLogin={handleSignUpOrLogin}/>
           </Route>
-          {userService.getUser() ? 
+          {userService.getUser() ? (
             <> 
              <Switch>
                 <Route exact path="/">
-                    Home PAGE COMPONENT WOULD GO HERE
+                    <MainPage />
                 </Route>
             </Switch>
             </>
-            :
+          ):(
             <Redirect to='/login'/>
-          }
+          )}
   
       </Switch>
     </div>
