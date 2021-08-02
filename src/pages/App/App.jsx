@@ -35,7 +35,7 @@ function App() {
             <> 
              <Switch>
                 <Route exact path="/">
-                    <MainPage />
+                    <MainPage user={user} handleLogout={handleLogout}/>
                 </Route>
             </Switch>
             </>
