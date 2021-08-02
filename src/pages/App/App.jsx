@@ -32,13 +32,13 @@ function App() {
              <SignupPage handleSignUpOrLogin={handleSignUpOrLogin}/>
           </Route>
           {userService.getUser() ? (
-            <> 
+             
              <Switch>
                 <Route exact path="/">
                     <MainPage user={user} handleLogout={handleLogout}/>
                 </Route>
             </Switch>
-            </>
+            
           ):(
             <Redirect to='/login'/>
           )}
