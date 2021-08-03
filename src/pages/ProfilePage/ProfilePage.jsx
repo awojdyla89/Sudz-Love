@@ -7,6 +7,8 @@ import BeerFeed from "../../components/BeerFeed/BeerFeed";
 import userService from '../../utils/userService';
 import { useLocation } from 'react-router-dom';
 import { useParams } from "react-router-dom";
+import * as postsAPI from '../../utils/postApi';
+import * as votesAPI from '../../utils/votesApi';
 
 
 export default function ProfilePage({user, handleLogout}){
@@ -32,6 +34,25 @@ export default function ProfilePage({user, handleLogout}){
         } catch (err) {
           console.log(err);
           setError("Profile does not Exist");
+        }
+      }
+
+      async function addVote(postId) {
+        try {
+          const data = await votesAPI.create(postId);
+          console.log(data, " this is from addVote() Mainpage");
+          getProfile();
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    
+      async function removeVote(likeID) {
+        try {
+          const data = await votesAPI.removeVote(likeID);
+          getProfile();
+        } catch (err) {
+          console.log(err);
         }
       }
 
@@ -72,10 +93,13 @@ export default function ProfilePage({user, handleLogout}){
               <Grid.Column style={{ maxWidth: 750 }}>
                 <BeerFeed
                   isProfile={true}
-                  posts={posts}
                   numPhotosCol={3}
-                  
                   user={user}
+                  posts={posts}
+                 // loading={loading}
+                 // isProfile={false}
+                  addVote={addVote}
+                  removeVote={removeVote}
                 />
               </Grid.Column>
             </Grid.Row>

@@ -2,7 +2,12 @@ import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react'
 
 
-function BeerCard({post, isProfile, user }) { 
+function BeerCard({post, isProfile, user, addVote, removeVote }) { 
+
+    const voted = post.votes.findIndex(vote => vote.username === user.username);
+    const clickHandler = voted > -1 ?  () => removeVote(post.votes[voted]._id) : () => addVote(post._id)
+    const likeColor = voted > -1 ? 'orange' : 'grey';
+  
 
  
   return (
@@ -26,8 +31,8 @@ function BeerCard({post, isProfile, user }) {
       </Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={'right'}>
-        <Icon name={'beer'} size='large' color={'grey'} />
-        {post.likes.length} Buzz Count
+        <Icon name={'beer'} size='large' color={likeColor} onClick={clickHandler} />
+        {post.votes.length} Buzz Count
           
       </Card.Content>
     </Card>

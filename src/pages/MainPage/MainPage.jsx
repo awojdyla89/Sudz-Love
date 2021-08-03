@@ -4,6 +4,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import AddBeerForm from '../../components/AddBeerForm/AddBeerForm';
 import BeerFeed from '../../components/BeerFeed/BeerFeed'; 
 import * as postsAPI from '../../utils/postApi';
+import * as votesAPI from '../../utils/votesApi';
 
 export default function MainPage({user, handleLogout}){
 
@@ -30,6 +31,25 @@ export default function MainPage({user, handleLogout}){
         }
       }
 
+      async function addVote(postId) {
+        try {
+          const data = await votesAPI.create(postId);
+          console.log(data, " this is from addVote() Mainpage");
+          getPosts();
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    
+      async function removeVote(likeID) {
+        try {
+          const data = await votesAPI.removeVote(likeID);
+          getPosts();
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
       useEffect(() => {
         getPosts()
       }, [])
@@ -53,8 +73,8 @@ export default function MainPage({user, handleLogout}){
              numPhotosCol={1}
             // loading={loading}
             // isProfile={false}
-            // addLike={addLike}
-            // removeLike={removeLike}
+             addVote={addVote}
+             removeVote={removeVote}
              user={user}
           />
         </Grid.Column>
