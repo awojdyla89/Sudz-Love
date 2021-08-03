@@ -55,7 +55,7 @@ export default function MainPage({user, handleLogout}){
             // isProfile={false}
             // addLike={addLike}
             // removeLike={removeLike}
-             //user={user}
+             user={user}
           />
         </Grid.Column>
       </Grid.Row>

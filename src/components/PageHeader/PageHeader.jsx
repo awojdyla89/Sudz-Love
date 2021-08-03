@@ -8,12 +8,12 @@ export default function PageHeader({user, handleLogout}){
 
        <Segment clearing>
            <Header size="huge" floated="left">
-               <Link to={`/${user.username}`}><Icon color="black"name="address card"></Icon></Link><br/> {user.username}'s Profile
+               <Link to={`/${user.username}`} ><Image src={user.photoUrl ? user.photoUrl : "https://react.semantic-ui.com/images/wireframe/square-image.png"} avatar></Image></Link><br/> {user.username}'s Profile
            </Header>
 
            <Header size="huge" floated="right">
-               <Link to="/"><Icon color="orange" name="home"></Icon></Link><br />
-               <Link to='' onClick={handleLogout}>Logout</Link>
+               <Link to="/"><Icon color="orange" name="home"></Icon>Home</Link><br />
+               <Link to='' onClick={handleLogout}><Icon color="red" name="sign-out"></Icon>Logout</Link>
            </Header>
        </Segment>
     

@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react'
 
 
-function BeerCard({post, isProfile }) { 
+function BeerCard({post, isProfile, user }) { 
 
  
   return (
@@ -11,13 +11,13 @@ function BeerCard({post, isProfile }) {
       <Card.Content textAlign='left'>
           <Image
               floated='left'
-              size='large'
+              size='medium'
               avatar
-              src={post.user.photoUrl ? post.user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
+              src={user.photoUrl ? user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
           />
           <Card.Header floated="right">{post.user.username}</Card.Header>
       </Card.Content>
-  
+        
   
       <Image src={`${post.photoUrl}`} wrapped ui={false} />
       <Card.Content>
@@ -26,8 +26,8 @@ function BeerCard({post, isProfile }) {
       </Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={'right'}>
-        <Icon name={'heart'} size='large' color={'grey'} />
-        {post.likes.length} Likes
+        <Icon name={'beer'} size='large' color={'grey'} />
+        {post.likes.length} Buzz Count
           
       </Card.Content>
     </Card>
