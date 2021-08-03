@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {  Grid , Loader} from 'semantic-ui-react'
 import ProfileBio from '../../components/ProfileBio/ProfileBio';
-//import ProfilePostDisplay from '../../components/ProfilePostDisplay/ProfilePostDisplay';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import BeerFeed from "../../components/BeerFeed/BeerFeed";
 import userService from '../../utils/userService';

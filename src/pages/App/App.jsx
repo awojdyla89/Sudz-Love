@@ -24,7 +24,8 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" style={{backgroundImage: `url(/logo512.png)`, backgroundRepeat: 'no-repeat',}}>
+        
       <Switch>
           <Route exact path="/login">
              <LoginPage handleSignUpOrLogin={handleSignUpOrLogin}/>

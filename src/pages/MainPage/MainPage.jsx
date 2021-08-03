@@ -56,18 +56,21 @@ export default function MainPage({user, handleLogout}){
 
     return (
         <Grid centered>
+
       <Grid.Row>
         <Grid.Column>
           <PageHeader handleLogout={handleLogout} user={user} />
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row>
-        <Grid.Column style={{ maxWidth: 450 }}>
+
+      <div class="eight wide column">
+        <Grid.Column style={{ maxWidth: 450 }} >
           <AddBeerForm handleAddPost={handleAddPost} />
         </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column style={{ maxWidth: 450 }}>
+        </div>
+
+        <div>
+        <Grid.Column style={{ maxWidth: 350 }}>
           <BeerFeed
              posts={posts}
              numPhotosCol={1}
@@ -78,7 +81,8 @@ export default function MainPage({user, handleLogout}){
              user={user}
           />
         </Grid.Column>
-      </Grid.Row>
+        </div>
+
     </Grid>
     )
 }
