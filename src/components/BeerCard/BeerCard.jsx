@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Icon, Image ,Button } from 'semantic-ui-react'
+import { Card, Icon, Image ,Button, Item } from 'semantic-ui-react'
+import './BeerCard.css';
 
 
 function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) { 
@@ -13,33 +14,111 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
     const delPostHandler = () => deletePost(post._id)
  
   return (
-    <Card key={post._id}>
+    <Card key={post._id} >
+{isProfile ? ( 
+    ""
+    ):(
+
+<Card.Content textAlign='left'>
+  <Image
+      floated='left'
+      size='medium'
+      avatar
+      src={post.user.photoUrl ? post.user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
+  />
+  <Card.Header floated="right">{post.user.username}<Card.Meta floated="right">Joined in 2016</Card.Meta></Card.Header>
+  
+  
+</Card.Content>
+    )}
+
+<Image size="tiny" src={`${post.photoUrl}`} wrapped ui={false} />
+<Card.Content>
+<Card.Description textAlign="center">
+{post.caption}
+</Card.Description>
+</Card.Content>
+<Card.Content extra textAlign={'left'}>
+Buzz Count <Icon  name={'beer'} size='large' color={likeColor} onClick={clickHandler} />
+ {post.votes.length} 
+</Card.Content>
+
+{posted ? (
+  
+  <Button color="red" onClick={delPostHandler}>Delete</Button>
+):(
+  ''
+)}
+</Card> 
+  );
+}
+
+export default BeerCard;
+
+{/* <Card key={post._id}>
+{isProfile ? ( 
+    ""
+    ):(
+
+<Card.Content textAlign='left'>
+  <Image
+      floated='left'
+      size='medium'
+      avatar
+      src={post.user.photoUrl ? post.user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
+  />
+  <Card.Header floated="right">{post.user.username}</Card.Header>
+  
+</Card.Content>
+    )}
+
+<Image size="small" src={`${post.photoUrl}`} wrapped ui={false} />
+<Card.Content>
+<Card.Description>
+{post.caption}
+</Card.Description>
+</Card.Content>
+<Card.Content extra textAlign={'right'}>
+<Icon name={'beer'} size='large' color={likeColor} onClick={clickHandler} />
+{post.votes.length} Buzz Count
+</Card.Content>
+
+{posted ? (
+  
+  <Button color="red" onClick={delPostHandler}>Delete</Button>
+):(
+  ''
+)}
+
+</Card> */}
+
+{/* <Item key={post._id}>
         {isProfile ? ( 
             ""
             ):(
    
-      <Card.Content textAlign='left'>
+      <Item.Content textAlign='left'>
           <Image
               floated='left'
               size='medium'
               avatar
               src={post.user.photoUrl ? post.user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
           />
-          <Card.Header floated="right">{post.user.username}</Card.Header>
+          <Item.Header floated="right">{post.user.username}</Item.Header>
           
-      </Card.Content>
+      </Item.Content>
             )}
   
       <Image size="small" src={`${post.photoUrl}`} wrapped ui={false} />
-      <Card.Content>
-      <Card.Description>
+      <Item.Content>
+      <Item.Description>
         {post.caption}
-      </Card.Description>
-      </Card.Content>
-      <Card.Content extra textAlign={'right'}>
+      </Item.Description>
+      </Item.Content>
+      <Item.Content extra textAlign={'right'}>
         <Icon name={'beer'} size='large' color={likeColor} onClick={clickHandler} />
         {post.votes.length} Buzz Count
-      </Card.Content>
+      </Item.Content>
       
       {posted ? (
           
@@ -48,8 +127,4 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
           ''
       )}
       
-    </Card>
-  );
-}
-
-export default BeerCard;
+    </Item> */}

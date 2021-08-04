@@ -1,6 +1,6 @@
 import React from 'react';
 import {  Image, Grid, Segment } from 'semantic-ui-react';
-
+import './ProfileBio.css';
 
 function ProfileBio({user}) { 
   return (
@@ -13,7 +13,7 @@ function ProfileBio({user}) {
         <Segment vertical>
            <h3>My name is {user.username} and I love beer!</h3>
         </Segment>
-        <Segment>
+        <Segment className='bio'>
            <span> Bio: {user.beerbio}</span>
         </Segment>
           

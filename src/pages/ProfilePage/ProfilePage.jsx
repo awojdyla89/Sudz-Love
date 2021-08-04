@@ -111,7 +111,7 @@ export default function ProfilePage({user, handleLogout}){
               <Grid.Column style={{ maxWidth: 750 }}>
                 <BeerFeed
                   isProfile={true}
-                  numPhotosCol={3}
+                  numPhotosCol={4}
                   user={user}
                   posts={posts}
                   deletePost={deletePost}
