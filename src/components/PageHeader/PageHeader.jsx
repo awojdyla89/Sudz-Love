@@ -7,7 +7,7 @@ export default function PageHeader({user, handleLogout}){
 
     return(
         
-       <Segment clearing className='header'>
+       <Segment clearing className='headerStyle'>
            <Header size="huge" floated="left">
                <Link to={`/${user.username}`} ><Image src={user.photoUrl ? user.photoUrl : "https://react.semantic-ui.com/images/wireframe/square-image.png"} avatar></Image></Link><br/> {user.username}'s Profile
            </Header>

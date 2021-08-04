@@ -1,13 +1,10 @@
 .App {
   text-align: center;
-  /* background-image: url("beerlogo.png"); */
-  
-  background-color: #615d5d;
-}
+   background-color: #615d5d; 
 
-/* body{
-  background-image: url("https://www.vecteezy.com/free-vector/beer-brewing");
-} */
+   
+  }
+
 
 .App-logo {
   height: 40vmin;

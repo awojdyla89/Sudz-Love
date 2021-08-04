@@ -82,12 +82,12 @@ export default function MainPage({user, handleLogout}){
         </Grid.Column>
         </div>
 
-        <div>
+        <div class="five wide column">
         <Grid.Column style={{ maxWidth: 350 }}>
           <BeerFeed
              posts={posts}
              user={user}
-             photowidth={1}
+             photowidth={2}
              addVote={addVote}
              removeVote={removeVote}
              loading={loading}
