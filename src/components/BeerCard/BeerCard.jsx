@@ -7,6 +7,10 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
     const voted = post.votes.findIndex(vote => vote.username === user.username);
     const clickHandler = voted > -1 ?  () => removeVote(post.votes[voted]._id) : () => addVote(post._id)
     const likeColor = voted > -1 ? 'orange' : 'grey';
+
+    const posted = post.user.username === user.username
+    
+    console.log(post.user.username, "===", user.username)
   
     const delPostHandler = () => deletePost(post._id)
  
@@ -24,6 +28,7 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
               src={post.user.photoUrl ? post.user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
           />
           <Card.Header floated="right">{post.user.username}</Card.Header>
+          
       </Card.Content>
             )}
   
@@ -37,7 +42,14 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
         <Icon name={'beer'} size='large' color={likeColor} onClick={clickHandler} />
         {post.votes.length} Buzz Count
       </Card.Content>
-        <Button color="red" onClick={delPostHandler}>Delete</Button>
+      
+      {posted ? (
+          
+          <Button color="red" onClick={delPostHandler}>Delete</Button>
+      ):(
+          ''
+      )}
+      
     </Card>
   );
 }

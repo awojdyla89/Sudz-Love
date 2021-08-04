@@ -69,6 +69,15 @@ export default function ProfilePage({user, handleLogout}){
         getProfile()
     }, [])
 
+    if (error) {
+        return (
+          <>
+            <PageHeader />
+            <h1>{error}</h1>
+          </>
+        );
+      }
+
     if (loading) {
         return (
           <Grid
@@ -106,8 +115,7 @@ export default function ProfilePage({user, handleLogout}){
                   user={user}
                   posts={posts}
                   deletePost={deletePost}
-                 // loading={loading}
-                  //isProfile={false}
+                  loading={loading}
                   addVote={addVote}
                   removeVote={removeVote}
                 />

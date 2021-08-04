@@ -10,16 +10,17 @@ import userService from '../../utils/userService';
 export default function MainPage({user, handleLogout}){
 
     const [posts, setPosts] = useState([])
+    const [loading, setLoading] = useState(false);
 
 
     async function handleAddPost (post){
    
         console.log(post);
-        //setLoading(true);
+        setLoading(true);
         const data = await postsAPI.create(post);
         console.log(data.post, ' This is new BEER', data, ' data variable')
         setPosts(posts => [data.post, ...posts])
-        //setLoading(false);
+        setLoading(false);
       }
 
       async function getPosts(){
@@ -51,15 +52,7 @@ export default function MainPage({user, handleLogout}){
         }
       }
 
-    //   async function removePost(post){
-    //     try {
-    //         await postsAPI.removePost(post);
-    //         const data = await userService.getProfile(user.username);
-    //         setPosts(() => [...data.posts])
-    //     } catch(err) {
-    //     console.log(err)
-    //     }
-    // }
+
 
     async function deletePost(postId) {
         try {
@@ -94,11 +87,11 @@ export default function MainPage({user, handleLogout}){
           <BeerFeed
              posts={posts}
              user={user}
-             numPhotosCol={1}
+             photowidth={1}
              addVote={addVote}
              removeVote={removeVote}
-            // loading={loading}
-            // isProfile={false}
+             loading={loading}
+             isProfile={false}
              deletePost={deletePost}
           />
         </Grid.Column>
