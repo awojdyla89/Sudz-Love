@@ -4,7 +4,7 @@ import { Card  } from 'semantic-ui-react'
 import BeerCard from '../BeerCard/BeerCard';
 
 
-export default function BeerFeed({posts, numPhotosCol , user, addVote, removeVote}){
+export default function BeerFeed({posts, numPhotosCol , user, addVote, removeVote, deletePost}){
 
     return (
         <Card.Group itemsPerRow={numPhotosCol} stackable>
@@ -14,12 +14,13 @@ export default function BeerFeed({posts, numPhotosCol , user, addVote, removeVot
                         <BeerCard  
                             key={post._id} 
                             post={post}
+                            user={user}
                             numPhotosCol={1}
-                           // loading={loading}
-                           // isProfile={false}
                             addVote={addVote}
                             removeVote={removeVote}
-                            user={user}
+                            deletePost={deletePost}
+                           // loading={loading}
+                           // isProfile={false}
                             />
                     )
                 })}

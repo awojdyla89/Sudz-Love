@@ -8,7 +8,8 @@ const BUCKET_NAME = process.env.BUCKET_NAME
 
 module.exports = {
     create,
-    index
+    index,
+    deletePost
 }
 
 function create(req, res){
@@ -49,5 +50,30 @@ async function index(req, res){
         res.status(200).json({posts})
     } catch(err){
 
+    }
+}
+
+// async function deletePost(req, res){
+//     console.log(req.params)
+//     try {
+//         const post = await Post.findByIdAndDelete(req.params.id);
+       
+//         console.log(post, 'this is the POST')
+//         res.status(201).json({post: post})
+//     } catch(err){
+//         console.log(err)
+//         res.json({data: err})
+//     }
+// }
+
+async function deletePost(req, res){
+    try {
+        const post = await Post.findById(req.params.id);
+        
+        post.remove();
+        await post.save();
+        res.json({data: 'post removed'})
+    } catch(err){
+        res.json({error: err})
     }
 }

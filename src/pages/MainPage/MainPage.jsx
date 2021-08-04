@@ -5,6 +5,7 @@ import AddBeerForm from '../../components/AddBeerForm/AddBeerForm';
 import BeerFeed from '../../components/BeerFeed/BeerFeed'; 
 import * as postsAPI from '../../utils/postApi';
 import * as votesAPI from '../../utils/votesApi';
+import userService from '../../utils/userService';
 
 export default function MainPage({user, handleLogout}){
 
@@ -50,6 +51,25 @@ export default function MainPage({user, handleLogout}){
         }
       }
 
+    //   async function removePost(post){
+    //     try {
+    //         await postsAPI.removePost(post);
+    //         const data = await userService.getProfile(user.username);
+    //         setPosts(() => [...data.posts])
+    //     } catch(err) {
+    //     console.log(err)
+    //     }
+    // }
+
+    async function deletePost(postId) {
+        try {
+            await postsAPI.removePost(postId);
+            getPosts();
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
       useEffect(() => {
         getPosts()
       }, [])
@@ -73,12 +93,13 @@ export default function MainPage({user, handleLogout}){
         <Grid.Column style={{ maxWidth: 350 }}>
           <BeerFeed
              posts={posts}
+             user={user}
              numPhotosCol={1}
-            // loading={loading}
-            // isProfile={false}
              addVote={addVote}
              removeVote={removeVote}
-             user={user}
+            // loading={loading}
+            // isProfile={false}
+             deletePost={deletePost}
           />
         </Grid.Column>
         </div>

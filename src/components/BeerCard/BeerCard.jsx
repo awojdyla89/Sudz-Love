@@ -1,14 +1,14 @@
 import React from 'react';
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon, Image ,Button } from 'semantic-ui-react'
 
 
-function BeerCard({post, isProfile, user, addVote, removeVote }) { 
+function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) { 
 
     const voted = post.votes.findIndex(vote => vote.username === user.username);
     const clickHandler = voted > -1 ?  () => removeVote(post.votes[voted]._id) : () => addVote(post._id)
     const likeColor = voted > -1 ? 'orange' : 'grey';
   
-
+    const delPostHandler = () => deletePost(post._id)
  
   return (
     <Card key={post._id}>
@@ -20,7 +20,7 @@ function BeerCard({post, isProfile, user, addVote, removeVote }) {
               avatar
               src={user.photoUrl ? user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
           />
-          <Card.Header floated="right">{post.user.username}</Card.Header>
+          <Card.Header floated="right">{user.username}</Card.Header>
       </Card.Content>
         
   
@@ -33,8 +33,8 @@ function BeerCard({post, isProfile, user, addVote, removeVote }) {
       <Card.Content extra textAlign={'right'}>
         <Icon name={'beer'} size='large' color={likeColor} onClick={clickHandler} />
         {post.votes.length} Buzz Count
-          
       </Card.Content>
+        <Button color="red" onlick={delPostHandler}>Delete</Button>
     </Card>
   );
 }

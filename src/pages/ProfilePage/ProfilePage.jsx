@@ -4,7 +4,7 @@ import ProfileBio from '../../components/ProfileBio/ProfileBio';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import BeerFeed from "../../components/BeerFeed/BeerFeed";
 import userService from '../../utils/userService';
-import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import * as postsAPI from '../../utils/postApi';
 import * as votesAPI from '../../utils/votesApi';
@@ -18,6 +18,7 @@ export default function ProfilePage({user, handleLogout}){
     const [error, setError] = useState("");
   
     const { username } = useParams();
+    const history = useHistory();
     
     async function getProfile() {
         try {
@@ -54,6 +55,15 @@ export default function ProfilePage({user, handleLogout}){
           console.log(err);
         }
       }
+
+      async function deletePost(postId) {
+        try {
+            await postsAPI.removePost(postId);
+            getProfile();
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     useEffect(() => {
         getProfile()
@@ -95,8 +105,9 @@ export default function ProfilePage({user, handleLogout}){
                   numPhotosCol={3}
                   user={user}
                   posts={posts}
+                  deletePost={deletePost}
                  // loading={loading}
-                 // isProfile={false}
+                  //isProfile={false}
                   addVote={addVote}
                   removeVote={removeVote}
                 />
