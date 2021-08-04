@@ -15,7 +15,7 @@ export default function BeerFeed({posts, numPhotosCol , user, addVote, removeVot
                             key={post._id} 
                             post={post}
                             user={user}
-                            numPhotosCol={1}
+                            numPhotosCol={2}
                             addVote={addVote}
                             removeVote={removeVote}
                             deletePost={deletePost}

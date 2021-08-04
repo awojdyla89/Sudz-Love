@@ -12,17 +12,20 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
  
   return (
     <Card key={post._id}>
+        {isProfile ? ( 
+            ""
+            ):(
    
       <Card.Content textAlign='left'>
           <Image
               floated='left'
               size='medium'
               avatar
-              src={user.photoUrl ? user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
+              src={post.user.photoUrl ? post.user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
           />
-          <Card.Header floated="right">{user.username}</Card.Header>
+          <Card.Header floated="right">{post.user.username}</Card.Header>
       </Card.Content>
-        
+            )}
   
       <Image src={`${post.photoUrl}`} wrapped ui={false} />
       <Card.Content>
@@ -34,7 +37,7 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
         <Icon name={'beer'} size='large' color={likeColor} onClick={clickHandler} />
         {post.votes.length} Buzz Count
       </Card.Content>
-        <Button color="red" onlick={delPostHandler}>Delete</Button>
+        <Button color="red" onClick={delPostHandler}>Delete</Button>
     </Card>
   );
 }
