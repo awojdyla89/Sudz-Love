@@ -18,7 +18,7 @@ export default function ProfilePage({user, handleLogout}){
     const [error, setError] = useState("");
   
     const { username } = useParams();
-    const history = useHistory();
+    //const history = useHistory();
     
     async function getProfile() {
         try {

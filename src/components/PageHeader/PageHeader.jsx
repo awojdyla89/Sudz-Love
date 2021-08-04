@@ -1,12 +1,13 @@
 import React from 'react';
 import { Header, Segment, Image, Icon } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
+import './PageHeader.css';
 
 export default function PageHeader({user, handleLogout}){
 
     return(
-
-       <Segment clearing>
+        
+       <Segment clearing className='header'>
            <Header size="huge" floated="left">
                <Link to={`/${user.username}`} ><Image src={user.photoUrl ? user.photoUrl : "https://react.semantic-ui.com/images/wireframe/square-image.png"} avatar></Image></Link><br/> {user.username}'s Profile
            </Header>
@@ -16,7 +17,7 @@ export default function PageHeader({user, handleLogout}){
                <Link to='' onClick={handleLogout}><Icon color="red" name="sign-out"></Icon>Logout</Link>
            </Header>
        </Segment>
-    
+       
   
     
 

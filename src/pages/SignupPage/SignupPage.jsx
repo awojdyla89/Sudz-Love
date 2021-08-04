@@ -118,11 +118,7 @@ export default function SignUpPage(props){
                           required
                           />      
                           </Form.Field>
-                          <Button
-                            type="submit"
-                            className="btn"
-                            
-                          >
+                          <Button type="submit" className="btn" >
                           Signup
                         </Button>
                         </Segment>

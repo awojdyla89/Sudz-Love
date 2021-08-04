@@ -10,8 +10,6 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
 
     const posted = post.user.username === user.username
     
-    console.log(post.user.username, "===", user.username)
-  
     const delPostHandler = () => deletePost(post._id)
  
   return (
@@ -32,7 +30,7 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
       </Card.Content>
             )}
   
-      <Image src={`${post.photoUrl}`} wrapped ui={false} />
+      <Image size="small" src={`${post.photoUrl}`} wrapped ui={false} />
       <Card.Content>
       <Card.Description>
         {post.caption}

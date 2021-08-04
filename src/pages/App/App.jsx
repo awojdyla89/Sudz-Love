@@ -24,7 +24,10 @@ function App() {
   }
 
   return (
-    <div className="App" style={{backgroundImage: `url(/logo512.png)`, backgroundRepeat: 'no-repeat',}}>
+    <div className="App" style={{backgroundImage: `url(/background.jpeg)`, 
+    backgroundRepeat: 'no-repeat', 
+    backgroundPosition: 'center', 
+    backgroundSize: '1000px 800px', backgroundAttachment: 'fixed' }}>
         
       <Switch>
           <Route exact path="/login">

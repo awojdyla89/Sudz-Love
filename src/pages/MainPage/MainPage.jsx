@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, Loader } from "semantic-ui-react";
+import { Grid} from "semantic-ui-react";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import AddBeerForm from '../../components/AddBeerForm/AddBeerForm';
 import BeerFeed from '../../components/BeerFeed/BeerFeed'; 
 import * as postsAPI from '../../utils/postApi';
 import * as votesAPI from '../../utils/votesApi';
-import userService from '../../utils/userService';
+//import userService from '../../utils/userService';
 
 export default function MainPage({user, handleLogout}){
 
