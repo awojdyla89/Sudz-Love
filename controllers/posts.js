@@ -23,7 +23,13 @@ function create(req, res){
                 res.json({data: err})
             }
 
-            const post = await Post.create({caption: req.body.caption, user: req.user, photoUrl: data.Location});
+            const post = await Post.create({
+                favBeer: req.body.favBeer, 
+                abv: req.body.abv, 
+                beerType: req.body.beerType,
+                aboutBeer: req.body.aboutBeer,  
+                user: req.user, 
+                photoUrl: data.Location});
 
                       // We have to populate the user on the post we just created
             // on a document you have to call execPopulate()

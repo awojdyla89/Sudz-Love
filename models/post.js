@@ -8,7 +8,10 @@ const votesSchema = mongoose.Schema({
 const postSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     photoUrl: String,
-    caption: String,
+    favBeer: String,
+    abv: String,
+    beerType: String,
+    aboutBeer: String,
     votes: [votesSchema]
   })
  

@@ -24,6 +24,7 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
       floated='left'
       size='medium'
       avatar
+      bordered
       src={post.user.photoUrl ? post.user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
   />
   <Card.Header floated="right">{post.user.username}<Card.Meta floated="right">Joined in 2016</Card.Meta></Card.Header>
@@ -34,8 +35,11 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
 
 <Image size="tiny" src={`${post.photoUrl}`} wrapped ui={false} />
 <Card.Content>
-<Card.Description textAlign="center">
-{post.caption}
+<Card.Description textAlign="left">
+<b> Beer Name:</b> {post.favBeer} <br />
+<b>ABV:</b> {post.abv}% <br />
+<b>Beer Family:</b> {post.beerType} <br />
+<b>About:</b> {post.aboutBeer}
 </Card.Description>
 </Card.Content>
 <Card.Content extra textAlign={'left'}>

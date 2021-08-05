@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 
-import { Button, Form, Grid, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Segment, Dropdown, Menu } from 'semantic-ui-react'
 
 export default function AddBeerForm(props){
   const [selectedFile, setSelectedFile] = useState('')
   const [state, setState] = useState({
-    caption: ''
+    favBeer: '',
+    abv: '',
+    aboutBeer: ''
   })
 
   function handleFileInput(e){
@@ -25,12 +27,16 @@ export default function AddBeerForm(props){
              
     const formData = new FormData()
     formData.append('photo', selectedFile)
-    formData.append('caption', state.caption)
+    formData.append('favBeer', state.favBeer)
+    formData.append('abv', state.abv)
+    formData.append('beerType', state.beerType)
+    formData.append('aboutBeer', state.aboutBeer)
     props.handleAddPost(formData); // calling our function!
     
     // Have to submit the form now! We need a function!
   }
 
+  
 
   return (
     
@@ -42,12 +48,39 @@ export default function AddBeerForm(props){
             
               <Form.Input
                   className="form-control"
-                  name="caption"
-                  value={state.caption}
+                  name="favBeer"
+                  value={state.favBeer}
                   placeholder="What's the name of the Beer?"
                   onChange={handleChange}
                   required
               />   
+              <Form.Input
+                  className="form-control"
+                  name="abv"
+                  value={state.abv}
+                  placeholder="Alcohol%?"
+                  onChange={handleChange}
+                  required
+              />       
+
+              <Form.Input
+                  className="form-control"
+                  name="beerType"
+                  value={state.beerType}
+                  placeholder="Beer Family."
+                  onChange={handleChange}
+                  required
+              />  
+
+              <Form.Input
+                  className="form-control"
+                  name="aboutBeer"
+                  value={state.aboutBeer}
+                  placeholder="Tell us about the beer."
+                  onChange={handleChange}
+                  required
+              /> 
+
               <Form.Input
                 className="form-control"
                 type="file"
@@ -68,3 +101,28 @@ export default function AddBeerForm(props){
    
   ); 
 }
+
+{/* 
+              <Menu vertical>
+                <Dropdown 
+                placeholder="Beer Family"
+                name="beerType"
+                value={state.beerType}
+                onChange={handleChange}
+                required
+                >
+                <Dropdown.Menu>
+                    <Dropdown.Item value={state.beerType}>Ale</Dropdown.Item>
+                    <Dropdown.Item>Lager</Dropdown.Item>
+                    <Dropdown.Item>Porter</Dropdown.Item>
+                    <Dropdown.Item>Stout</Dropdown.Item>
+                    <Dropdown.Item>Blonde Ale</Dropdown.Item>
+                    <Dropdown.Item>Brown Ale</Dropdown.Item>
+                    <Dropdown.Item>Pale Ale</Dropdown.Item>
+                    <Dropdown.Item>Indian Pale Ale</Dropdown.Item>
+                    <Dropdown.Item>Wheat</Dropdown.Item>
+                    <Dropdown.Item>Pilsner</Dropdown.Item>
+                    <Dropdown.Item>Sour Ale</Dropdown.Item>
+                </Dropdown.Menu>
+                </Dropdown>
+               </Menu>  */}
