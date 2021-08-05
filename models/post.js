@@ -13,7 +13,9 @@ const postSchema = new mongoose.Schema({
     beerType: String,
     aboutBeer: String,
     votes: [votesSchema]
-  })
+  },
+  {timestamps: true}
+  )
  
 
 module.exports = mongoose.model('Post', postSchema);

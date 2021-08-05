@@ -27,7 +27,7 @@ function create(req, res){
                 favBeer: req.body.favBeer, 
                 abv: req.body.abv, 
                 beerType: req.body.beerType,
-                aboutBeer: req.body.aboutBeer,  
+                aboutBeer: req.body.aboutBeer, 
                 user: req.user, 
                 photoUrl: data.Location});
 

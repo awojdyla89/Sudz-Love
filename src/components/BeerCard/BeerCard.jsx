@@ -12,6 +12,8 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
     const posted = post.user.username === user.username
     
     const delPostHandler = () => deletePost(post._id)
+
+    
  
   return (
     <Card key={post._id} >
@@ -25,15 +27,15 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
       size='medium'
       avatar
       bordered
-      src={post.user.photoUrl ? post.user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
+      src={post.user.photoUrl ? post.user.photoUrl : 'favicon.ico'}
   />
-  <Card.Header floated="right">{post.user.username}<Card.Meta floated="right">Joined in 2016</Card.Meta></Card.Header>
+  <Card.Header floated="right">{post.user.username}<Card.Meta floated="right">Posted on </Card.Meta></Card.Header>
   
   
 </Card.Content>
     )}
 
-<Image size="tiny" src={`${post.photoUrl}`} wrapped ui={false} />
+<Image size="tiny" src={`${post.photoUrl}`} wrapped ui={false}  />
 <Card.Content>
 <Card.Description textAlign="left">
 <b> Beer Name:</b> {post.favBeer} <br />

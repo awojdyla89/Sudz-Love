@@ -31,11 +31,13 @@ export default function AddBeerForm(props){
     formData.append('abv', state.abv)
     formData.append('beerType', state.beerType)
     formData.append('aboutBeer', state.aboutBeer)
+    
     props.handleAddPost(formData); // calling our function!
     
     // Have to submit the form now! We need a function!
   }
 
+ 
   
 
   return (
@@ -58,7 +60,7 @@ export default function AddBeerForm(props){
                   className="form-control"
                   name="abv"
                   value={state.abv}
-                  placeholder="Alcohol%?"
+                  placeholder="Alcohol %?"
                   onChange={handleChange}
                   required
               />       
