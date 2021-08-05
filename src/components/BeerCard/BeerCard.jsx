@@ -21,7 +21,7 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
     ""
     ):(
 
-<Card.Content textAlign='left'>
+<Card.Content  textAlign='left'>
   <Image
       floated='left'
       size='medium'
@@ -29,23 +29,22 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
       bordered
       src={post.user.photoUrl ? post.user.photoUrl : 'favicon.ico'}
   />
-  <Card.Header floated="right">{post.user.username}<Card.Meta floated="right">Posted on </Card.Meta></Card.Header>
-  
-  
+  <Card.Header style={{ color: "white", fontSize: "25px" }} floated="right">{post.user.username}</Card.Header>
+  <Card.Meta floated="right">Posted on </Card.Meta>
 </Card.Content>
     )}
 
-<Image className='beerImage' src={`${post.photoUrl}`} wrapped ui={false}  />
+<Image  src={`${post.photoUrl}`} wrapped ui={false}  />
 
 <Card.Content>
-<Card.Description textAlign="left">
+<Card.Description style={{ color: "white" }} textAlign="left">
 <b> Beer Name:</b> {post.favBeer} <br />
 <b>ABV:</b> {post.abv}% <br />
 <b>Beer Family:</b> {post.beerType} <br />
 <b>About:</b> {post.aboutBeer}
 </Card.Description>
 </Card.Content>
-<Card.Content extra textAlign={'left'}>
+<Card.Content style={{ color: "white" }} extra textAlign={'left'}>
 Buzz Count <Icon  name={'beer'} size='large' color={likeColor} onClick={clickHandler} />
  {post.votes.length} 
 </Card.Content>

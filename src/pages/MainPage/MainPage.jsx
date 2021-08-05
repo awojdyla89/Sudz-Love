@@ -76,18 +76,18 @@ export default function MainPage({user, handleLogout}){
         </Grid.Column>
       </Grid.Row>
 
-      <div class="seven wide column">
+      <div class="five wide column">
         <Grid.Column style={{ maxWidth: 450 }} >
           <AddBeerForm handleAddPost={handleAddPost} />
         </Grid.Column>
         </div>
 
         <div >
-        <Grid.Column style={{ maxWidth: 550, overflow: 'auto', maxHeight: 900 }}>
+        <Grid.Column style={{ maxWidth: 750, overflow: 'auto', maxHeight: 900 }}>
           <BeerFeed
              posts={posts}
              user={user}
-             photowidth={2}
+             photowidth={3}
              addVote={addVote}
              removeVote={removeVote}
              loading={loading}
