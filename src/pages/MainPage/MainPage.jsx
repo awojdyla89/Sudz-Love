@@ -83,7 +83,7 @@ export default function MainPage({user, handleLogout}){
         </div>
 
         <div >
-        <Grid.Column style={{ maxWidth: 550 }}>
+        <Grid.Column style={{ maxWidth: 550, overflow: 'auto', maxHeight: 900 }}>
           <BeerFeed
              posts={posts}
              user={user}

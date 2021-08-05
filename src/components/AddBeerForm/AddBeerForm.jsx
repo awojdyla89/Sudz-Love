@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 
 import { Button, Form, Grid, Segment, Dropdown, Menu } from 'semantic-ui-react'
 
@@ -7,6 +7,7 @@ export default function AddBeerForm(props){
   const [state, setState] = useState({
     favBeer: '',
     abv: '',
+    beerType: '',
     aboutBeer: ''
   })
 
@@ -36,6 +37,20 @@ export default function AddBeerForm(props){
     
     // Have to submit the form now! We need a function!
   }
+
+//   const beerTypes = [
+//     { key: '0', text: 'Ale', value: 'Ale' },
+//     { key: '1', text: 'Lager', value: 'Lager' },
+//     { key: '2', text: 'Stout', value: 'Stout' },
+//     { key: '3', text: 'Blonde Ale', value: 'Blonde Ale' },
+//     { key: '4', text: 'Brown Ale', value: 'Brown Ale' },
+//     { key: '5', text: 'Pale Ale', value: 'Pale Ale' },
+//     { key: '6', text: 'Indian Pale Ale', value: 'Indian Pale Ale' },
+//     { key: '7', text: 'Wheat', value: 'Wheat' },
+//     { key: '8', text: 'Pilsner', value: 'Pilsner' },
+//     { key: '9', text: 'Sour Ale', value: 'Sour Ale' },
+
+//   ]
 
  
   
@@ -73,6 +88,16 @@ export default function AddBeerForm(props){
                   onChange={handleChange}
                   required
               />  
+{/*                   
+                            <Form.Select
+                                name="beerType"
+                                
+                                options={beerTypes}
+                                onChange={handleChange}
+                                value={state.beerType}
+                                label="beerType"  
+                                required              
+                            /> */}
 
               <Form.Input
                   className="form-control"

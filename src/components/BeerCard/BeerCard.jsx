@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Icon, Image ,Button, Item } from 'semantic-ui-react'
-import './BeerCard.css';
+//import './BeerCard.css';
 
 
 function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) { 

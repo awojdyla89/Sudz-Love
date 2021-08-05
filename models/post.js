@@ -12,10 +12,28 @@ const postSchema = new mongoose.Schema({
     abv: String,
     beerType: String,
     aboutBeer: String,
-    votes: [votesSchema]
+    votes: [votesSchema],
   },
   {timestamps: true}
   )
  
 
 module.exports = mongoose.model('Post', postSchema);
+
+// {
+//   type: String,
+//   enum: [
+//     '',
+//     'Ale',
+//     'Lager',
+//     'Stout',
+//     'Blonde Ale',
+//     'Brown Ale',
+//     'Pale Ale',
+//     'Indian Pale Ale',
+//     'Wheat',
+//     'Pilsner',
+//     'Sour Ale',
+
+//   ]
+// }
