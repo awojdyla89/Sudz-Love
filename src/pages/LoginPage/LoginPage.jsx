@@ -45,17 +45,18 @@ export default function LoginPage(props){
     return (
         <>
         <Grid
+        
           textAlign="center"
           style={{ height: "100vh" }}
           verticalAlign="middle"
         >
           <Grid.Column style={{ maxWidth: 450 }}>
-            <Header as="h2" color="teal" textAlign="center">
+            <Header as="h2" color="orange" textAlign="center">
               <Image src="beerlogo.png" /> Log-in to your
               account
             </Header>
-            <Form autoComplete="off" onSubmit={handleSubmit}>
-              <Segment stacked>
+            <Form  autoComplete="off" onSubmit={handleSubmit}>
+              <Segment stacked className="loginPage">
                 <Form.Input
                   type="email"
                   name="email"
@@ -63,6 +64,7 @@ export default function LoginPage(props){
                   value={state.email}
                   onChange={handleChange}
                   required
+                 
                 />
                 <Form.Input
                   name="password"
@@ -73,7 +75,7 @@ export default function LoginPage(props){
                   required
                 />
                 <Button
-                  color="teal"
+                  color="orange"
                   fluid
                   size="large"
                   type="submit"
@@ -83,8 +85,8 @@ export default function LoginPage(props){
                 </Button>
               </Segment>
             </Form>
-            <Message>
-              New to beer? <Link to="/signup">Sign Up</Link>
+            <Message className="signupLink" >
+              New to Sudz Love? &nbsp;&nbsp;&nbsp; <Link to="/signup" className="link">Sign Up</Link>
             </Message>
             {error ? <ErrorMessage error={error} /> : null}
           </Grid.Column>

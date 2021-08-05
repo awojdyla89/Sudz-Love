@@ -10,9 +10,9 @@ function ProfileBio({user}) {
         {/* <Image src={`${user.photoUrl ? user.photoUrl : "https://react.semantic-ui.com/images/wireframe/square-image.png"} `} avatar size='small' /> */}
       </Grid.Column>
       <Grid.Column textAlign="left" style={{ maxWidth: 450 }}>
-        <Segment vertical>
-           <h3>My name is {user.username} and I love beer!</h3>
-        </Segment>
+        {/* <Segment vertical>
+           <h3> {user.username}'s Beer Posts</h3>
+        </Segment> */}
         <Segment className='bio'>
            <span> " {user.beerbio} "</span>
         </Segment>

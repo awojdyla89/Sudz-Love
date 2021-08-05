@@ -1,6 +1,7 @@
 import React, { useState , useEffect} from 'react';
 
 import { Button, Form, Grid, Segment, Dropdown, Menu } from 'semantic-ui-react'
+import './AddBeerForm.css'
 
 export default function AddBeerForm(props){
   const [selectedFile, setSelectedFile] = useState('')
@@ -59,7 +60,7 @@ export default function AddBeerForm(props){
     
     <Grid textAlign='center' style={{ height: '25vh' }} verticalAlign='middle'>
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Segment>
+        <Segment className="beerform">
         
             <Form  autoComplete="off" onSubmit={handleSubmit}>
             
@@ -118,6 +119,7 @@ export default function AddBeerForm(props){
               <Button
                 type="submit"
                 className="btn"
+                color="orange"
               >
                 ADD BEER
               </Button>
