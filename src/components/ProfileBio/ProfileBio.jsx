@@ -14,7 +14,7 @@ function ProfileBio({user}) {
            <h3>My name is {user.username} and I love beer!</h3>
         </Segment>
         <Segment className='bio'>
-           <span> Bio: {user.beerbio}</span>
+           <span> " {user.beerbio} "</span>
         </Segment>
           
       </Grid.Column>

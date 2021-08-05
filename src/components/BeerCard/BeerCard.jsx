@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Icon, Image ,Button, Item } from 'semantic-ui-react'
-//import './BeerCard.css';
+import './BeerCard.css';
 
 
 function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) { 
@@ -16,7 +16,7 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
     
  
   return (
-    <Card key={post._id} >
+    <Card key={post._id} className='beerCard' >
 {isProfile ? ( 
     ""
     ):(
@@ -35,7 +35,8 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
 </Card.Content>
     )}
 
-<Image size="tiny" src={`${post.photoUrl}`} wrapped ui={false}  />
+<Image className='beerImage' src={`${post.photoUrl}`} wrapped ui={false}  />
+
 <Card.Content>
 <Card.Description textAlign="left">
 <b> Beer Name:</b> {post.favBeer} <br />
