@@ -27,7 +27,7 @@ export default function PageHeader({user, handleLogout}){
     <Button inverted color="yellow">{user.username}'s Profile</Button>
 </Link>
 {/* <Menu.Item as={Link} to="/" style={{ fontSize: 15 }}>{user.username}'s <br /> Profile</Menu.Item> */}
-<Menu.Item position="right" style={{ fontSize: 35 }}>Sudz Love</Menu.Item>
+<Menu.Item position="right" style={{ fontSize: 49, fontFamily: 'Chalkduster, fantasy', textShadow: "-1px 1px 2px orange", fontWeight: 600 }}>Sudz Love</Menu.Item>
 
 
 
