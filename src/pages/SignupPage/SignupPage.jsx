@@ -9,6 +9,7 @@ import './SignupPage.css'
 
 export default function SignUpPage(props){
     const [selectedFile, setSelectedFile] = useState('');
+    const [loading, setLoading] = useState(false);
     const [error, setError ] = useState('')
     const [state, setState] = useState({
       username: '',
@@ -17,9 +18,7 @@ export default function SignUpPage(props){
       passwordConf: '',
       beerbio: ''
     });
-
-
-    const [loading, setLoading] = useState(false);
+    
 
     const history = useHistory();
 
@@ -86,7 +85,7 @@ export default function SignUpPage(props){
                 {loading ? (
                 <div>
                     <Dimmer active >
-                    <Loader size="medium" active inline='centered'>Creating User...</Loader>
+                    <Loader size="big" active inline='centered'>Creating User...</Loader>
                     </Dimmer>
                     <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
                 </div>

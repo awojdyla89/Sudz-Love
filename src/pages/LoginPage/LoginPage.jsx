@@ -11,10 +11,13 @@ import {
     Image,
     Message,
     Segment,
+    Dimmer,
+    Loader
   } from "semantic-ui-react";
 
 export default function LoginPage(props){
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
     const [state, setState] = useState({
       email: "",
       password: "",
@@ -30,6 +33,7 @@ export default function LoginPage(props){
     }
 
     async function handleSubmit(e){
+      setLoading(true);
         e.preventDefault();
 
         try{
@@ -39,6 +43,7 @@ export default function LoginPage(props){
         } catch (err) {
             setError(err.message);
         }
+        setLoading(false);
     }
     
 
@@ -56,6 +61,21 @@ export default function LoginPage(props){
               account
             </Header>
             <Form  autoComplete="off" onSubmit={handleSubmit}>
+
+            {loading ? (
+                <div>
+                    <Dimmer active >
+                    <Loader size="large" active inline='centered'>Signing In...</Loader>
+                    </Dimmer>
+                    <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
+                </div>
+                ) : null} 
+
+
+
+
+
+
               <Segment stacked className="loginPage">
                 <Form.Input
                   type="email"
