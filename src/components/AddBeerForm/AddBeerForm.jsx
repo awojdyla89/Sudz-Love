@@ -9,6 +9,7 @@ export default function AddBeerForm(props){
     favBeer: '',
     abv: '',
     beerType: '',
+    postedDate:'',
     aboutBeer: ''
   })
 
@@ -26,18 +27,31 @@ export default function AddBeerForm(props){
 
   function handleSubmit(e){
     e.preventDefault()
+
+
+
+    let today = new Date().toLocaleDateString()
+    console.log("TOOOODAAAYYYYYYYY!!!!!!!!_>___>_>_>_", today)
+    
+  
+    state.postedDate = today
              
     const formData = new FormData()
     formData.append('photo', selectedFile)
     formData.append('favBeer', state.favBeer)
     formData.append('abv', state.abv)
     formData.append('beerType', state.beerType)
+    formData.append('postedDate', state.postedDate)
     formData.append('aboutBeer', state.aboutBeer)
     
     props.handleAddPost(formData); // calling our function!
     
     // Have to submit the form now! We need a function!
   }
+
+
+ 
+
 
 //   const beerTypes = [
 //     { key: '0', text: 'Ale', value: 'Ale' },
@@ -120,6 +134,8 @@ export default function AddBeerForm(props){
                 type="submit"
                 className="btn"
                 color="orange"
+                value={state.postedDate}
+                onChange={handleChange}
               >
                 ADD BEER
               </Button>

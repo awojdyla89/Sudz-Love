@@ -12,6 +12,7 @@ const postSchema = new mongoose.Schema({
     abv: String,
     beerType: String,
     aboutBeer: String,
+    postedDate: Date,
     votes: [votesSchema],
   },
   {timestamps: true}

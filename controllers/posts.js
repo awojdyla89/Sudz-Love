@@ -23,11 +23,35 @@ function create(req, res){
                 res.json({data: err})
             }
 
+           
+            let today = new Date()
+            // let dd = today.getDate();
+
+            // let mm = today.getMonth()+1; 
+            // const yyyy = today.getFullYear();
+            // if(dd<10) 
+            // {
+            //     dd=`0${dd}`;
+            // } 
+
+            // if(mm<10) 
+            // {
+            //     mm=`0${mm}`;
+            // } 
+            // today = `${dd}/${mm}/${yyyy}`;
+
+
+
+
+
+            req.body.postedDate = today
+
             const post = await Post.create({
                 favBeer: req.body.favBeer, 
                 abv: req.body.abv, 
                 beerType: req.body.beerType,
                 aboutBeer: req.body.aboutBeer, 
+                postedDate: req.body.postedDate,
                 user: req.user, 
                 photoUrl: data.Location});
 
