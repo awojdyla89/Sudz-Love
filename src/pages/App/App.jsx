@@ -26,11 +26,10 @@ function App() {
 
   return (
     <div className="App" style={{backgroundImage: `url(/background.jpeg)`, 
-    backgroundRepeat: 'no-repeat', 
-    backgroundPosition: 'center', 
-    backgroundSize: '1250px 900px', backgroundAttachment: 'fixed',
+    width: '100%', 
+    minHeight:'100vh',
     backgroundSize: "cover" }}>
-        
+    
       <Switch>
           <Route exact path="/login">
              <LoginPage handleSignUpOrLogin={handleSignUpOrLogin}/>

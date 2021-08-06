@@ -30,9 +30,9 @@ export default function AddBeerForm(props){
 
 
 
-    let today = new Date().toLocaleDateString()
-    console.log("TOOOODAAAYYYYYYYY!!!!!!!!_>___>_>_>_", today)
-    state.postedDate = today
+      let today = new Date();
+    // // console.log("TOOOODAAAYYYYYYYY!!!!!!!!_>___>_>_>_", today)
+      state.postedDate = today
              
     const formData = new FormData()
     formData.append('photo', selectedFile)

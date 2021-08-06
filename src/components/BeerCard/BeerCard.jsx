@@ -13,9 +13,10 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
     
     const delPostHandler = () => deletePost(post._id)
 
-    
           
   return (
+
+
     <Card key={post._id} className='beerCard' >
 {isProfile ? ( 
     ""
@@ -30,7 +31,7 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
       src={post.user.photoUrl ? post.user.photoUrl : 'favicon.ico'}
   />
   <Card.Header style={{ color: "white", fontSize: "25px" }} floated="right">{post.user.username}</Card.Header>
-  <Card.Meta floated="right">Posted on {post.postedDate}</Card.Meta>
+  <Card.Description floated="right">Posted on {new Date((post.postedDate)).toLocaleDateString()}</Card.Description>
 </Card.Content>
     )}
 
