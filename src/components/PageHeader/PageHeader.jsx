@@ -22,7 +22,10 @@ export default function PageHeader({user, handleLogout}){
   
 
 <Menu secondary pointing className="headerStyle">
-<Link style={{ fontSize: 20 }} to={`/${user.username}`} ><Image size="tiny"  src={user.photoUrl ? user.photoUrl : "favicon.ico"} ></Image>{user.username}'s Profile</Link>
+<Link style={{ fontSize: 20 }} to={`/${user.username}`} >
+    <Image size="tiny"  src={user.photoUrl ? user.photoUrl : "favicon.ico"} ></Image>
+    <Button inverted color="yellow">{user.username}'s Profile</Button>
+</Link>
 {/* <Menu.Item as={Link} to="/" style={{ fontSize: 15 }}>{user.username}'s <br /> Profile</Menu.Item> */}
 <Menu.Item position="right" style={{ fontSize: 35 }}>Sudz Love</Menu.Item>
 
@@ -33,6 +36,7 @@ export default function PageHeader({user, handleLogout}){
       Beer Feed
     </Button>
   </Menu.Item>
+  
 
 
   <Menu.Item>
