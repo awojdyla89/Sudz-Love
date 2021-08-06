@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
-import { Button, Form, Grid, Header, Image, Segment, Message} from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Image, Segment, Message, Dimmer, Loader} from 'semantic-ui-react'
 import userService from '../../utils/userService';
 import { useHistory, Link } from 'react-router-dom';
 import './SignupPage.css'
@@ -18,9 +18,15 @@ export default function SignUpPage(props){
       beerbio: ''
     });
 
+
+    const [loading, setLoading] = useState(false);
+
     const history = useHistory();
 
    async function handleSubmit(e){
+     setLoading(true)
+
+
         e.preventDefault();
         
         const formData = new FormData();
@@ -51,11 +57,11 @@ export default function SignUpPage(props){
             console.log(err.message)
             setError(err.message)
           }
-    
+    setLoading(false);
     }
 
     function handleFileInput(e){
-        console.log("BIO Photo File:-->", e.target.files)
+        //console.log("BIO Photo File:-->", e.target.files)
         setSelectedFile(e.target.files[0])
     }
 
@@ -69,7 +75,6 @@ export default function SignUpPage(props){
  
     return (
         
-       
         <>
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 450 }}>
@@ -77,6 +82,17 @@ export default function SignUpPage(props){
                 <Image src='beerlogo.png' /> Sign Up!    
               </Header>            
                 <Form autoComplete="off"  onSubmit={handleSubmit}>
+
+                {loading ? (
+                <div>
+                    <Dimmer active >
+                    <Loader size="medium" active inline='centered'>Creating User...</Loader>
+                    </Dimmer>
+                    <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
+                </div>
+                ) : null} 
+
+
                 <Segment className="signupPage" stacked>               
                     <Form.Input                    
                       name="username"

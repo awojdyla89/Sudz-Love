@@ -29,6 +29,7 @@ export default function BeerFeed({posts, isProfile, photowidth , user, addVote, 
                             removeVote={removeVote}
                             deletePost={deletePost}
                             isProfile={isProfile}
+                            loading={loading}
                             />
                     )
                 })}

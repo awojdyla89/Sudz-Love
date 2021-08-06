@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card, Icon, Image ,Button, Item } from 'semantic-ui-react'
+import { Card, Icon, Image ,Button, Item, Dimmer, Loader } from 'semantic-ui-react'
 import './BeerCard.css';
 
 
-function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) { 
+function BeerCard({post, isProfile, user, addVote, removeVote, deletePost, loading }) { 
 
     const voted = post.votes.findIndex(vote => vote.username === user.username);
     const clickHandler = voted > -1 ?  () => removeVote(post.votes[voted]._id) : () => addVote(post._id)
@@ -18,6 +18,7 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
 
 
     <Card key={post._id} className='beerCard' >
+
 {isProfile ? ( 
     ""
     ):(

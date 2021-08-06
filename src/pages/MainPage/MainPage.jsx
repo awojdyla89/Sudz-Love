@@ -18,7 +18,7 @@ export default function MainPage({user, handleLogout}){
         //console.log(post);
         setLoading(true);
         const data = await postsAPI.create(post);
-        console.log(data.post, ' This is new BEER', data, ' data variable')
+        //console.log(data.post, ' This is new BEER', data, ' data variable')
         setPosts(posts => [data.post, ...posts])
         setLoading(false);
       }
@@ -52,17 +52,13 @@ export default function MainPage({user, handleLogout}){
         }
       }
 
-
-
     async function deletePost(postId) {
-    
         try {
             await postsAPI.removePost(postId);
             getPosts();
         } catch (err) {
             console.log(err)
-        }
-        
+        } 
     }
 
       useEffect(() => {
