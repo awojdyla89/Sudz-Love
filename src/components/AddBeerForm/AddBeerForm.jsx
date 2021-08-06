@@ -141,7 +141,7 @@ export default function AddBeerForm(props){
                 required
                 >
                 <Dropdown.Menu>
-                    <Dropdown.Item value={state.beerType}>Ale</Dropdown.Item>
+                    <Dropdown.Item>Ale</Dropdown.Item>
                     <Dropdown.Item>Lager</Dropdown.Item>
                     <Dropdown.Item>Porter</Dropdown.Item>
                     <Dropdown.Item>Stout</Dropdown.Item>

@@ -3,6 +3,7 @@ import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import { Button, Form, Grid, Header, Image, Segment } from 'semantic-ui-react'
 import userService from '../../utils/userService';
 import { useHistory } from 'react-router-dom';
+import './SignupPage.css'
 
 
 
@@ -72,11 +73,11 @@ export default function SignUpPage(props){
         <>
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 450 }}>
-              <Header as='h2' color='teal' textAlign='center'>
+              <Header as='h2' color='orange' textAlign='center'>
                 <Image src='beerlogo.png' /> Sign Up!    
               </Header>            
                 <Form autoComplete="off"  onSubmit={handleSubmit}>
-                <Segment stacked>               
+                <Segment className="signupPage" stacked>               
                     <Form.Input                    
                       name="username"
                       placeholder="username"
@@ -108,7 +109,7 @@ export default function SignUpPage(props){
                       onChange={handleChange}
                       required
                     />
-                    <Form.TextArea label='beerbio' placeholder='My Favorite beer is...' name="beerbio" onChange={handleChange}/>
+                    <Form.TextArea label='List Favorite Beers here...' placeholder='My Favorite beer is...' name="beerbio" onChange={handleChange}/>
                     <Form.Field> 
                         <Form.Input
                           type="file"
@@ -118,7 +119,7 @@ export default function SignUpPage(props){
                           required
                           />      
                           </Form.Field>
-                          <Button type="submit" className="btn" >
+                          <Button type="submit" className="btn"  color="orange">
                           Signup
                         </Button>
                         </Segment>

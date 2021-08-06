@@ -1,3 +1,9 @@
-.ui.segment.headerStyle{
-    background-color: rgba(228, 97, 97, 0.192);
+
+
+h1{
+    font-family: 'Brush Script MT', cursive;
+}
+
+.ui.menu.headerStyle{
+    background-color: rgba(2, 1, 1, 0.418);
 }
