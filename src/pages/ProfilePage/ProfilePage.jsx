@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import * as postsAPI from '../../utils/postApi';
 import * as votesAPI from '../../utils/votesApi';
+import "./ProfilePage.css"
 
 
 export default function ProfilePage({user, handleLogout}){
@@ -96,7 +97,7 @@ export default function ProfilePage({user, handleLogout}){
     
       return (
         <>
-          <Grid>
+          <Grid className="backgroundimg">
             <Grid.Row>
               <Grid.Column>
                 <PageHeader user={user} handleLogout={handleLogout}/>

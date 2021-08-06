@@ -6,6 +6,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService'
 import MainPage from '../MainPage/MainPage';
 import ProfilePage from "../ProfilePage/ProfilePage";
+import HomePage from "../HomePage/HomePage"
 
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
     <div className="App" style={{backgroundImage: `url(/background.jpeg)`, 
     backgroundRepeat: 'no-repeat', 
     backgroundPosition: 'center', 
-    backgroundSize: '1250px 900px', backgroundAttachment: 'fixed' }}>
+    backgroundSize: '1250px 900px', backgroundAttachment: 'fixed',
+    backgroundSize: "cover" }}>
         
       <Switch>
           <Route exact path="/login">
@@ -40,6 +42,9 @@ function App() {
              
              <Switch>
                 <Route exact path="/">
+                    <HomePage user={user} handleLogout={handleLogout}/>
+                </Route>
+                <Route exact path="/main">
                     <MainPage user={user} handleLogout={handleLogout}/>
                 </Route>
                 <Route path="/:username">
