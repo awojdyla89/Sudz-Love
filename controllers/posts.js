@@ -24,7 +24,8 @@ function create(req, res){
             }
 
            
-            let today = new Date()
+            let today = new Date().toLocaleDateString();
+            console.log("TODAY IN THE CREATE COINTROLLLLEEERRR---------!!!", today)
             // let dd = today.getDate();
 
             // let mm = today.getMonth()+1; 
@@ -39,10 +40,6 @@ function create(req, res){
             //     mm=`0${mm}`;
             // } 
             // today = `${dd}/${mm}/${yyyy}`;
-
-
-
-
 
             req.body.postedDate = today
 

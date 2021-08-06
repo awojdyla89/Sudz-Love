@@ -32,8 +32,6 @@ export default function AddBeerForm(props){
 
     let today = new Date().toLocaleDateString()
     console.log("TOOOODAAAYYYYYYYY!!!!!!!!_>___>_>_>_", today)
-    
-  
     state.postedDate = today
              
     const formData = new FormData()
@@ -134,6 +132,7 @@ export default function AddBeerForm(props){
                 type="submit"
                 className="btn"
                 color="orange"
+                name="postedDate"
                 value={state.postedDate}
                 onChange={handleChange}
               >

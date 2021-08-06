@@ -7,7 +7,7 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
 
     const voted = post.votes.findIndex(vote => vote.username === user.username);
     const clickHandler = voted > -1 ?  () => removeVote(post.votes[voted]._id) : () => addVote(post._id)
-    const likeColor = voted > -1 ? 'orange' : 'grey';
+    const voteColor = voted > -1 ? 'orange' : 'grey';
 
     const posted = post.user.username === user.username
     
@@ -45,7 +45,7 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost }) {
 </Card.Description>
 </Card.Content>
 <Card.Content style={{ color: "white" }} extra textAlign={'left'}>
-Buzz Count <Icon  name={'beer'} size='large' color={likeColor} onClick={clickHandler} />
+Buzz Count <Icon  name={'beer'} size='large' color={voteColor} onClick={clickHandler} />
  {post.votes.length} 
 </Card.Content>
 
