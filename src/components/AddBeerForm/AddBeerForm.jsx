@@ -1,6 +1,6 @@
 import React, { useState , useEffect} from 'react';
 
-import { Button, Form, Grid, Segment, Dropdown, Menu } from 'semantic-ui-react'
+import { Button, Form, Grid, Segment, Dimmer, Loader, Image, Dropdown, Menu } from 'semantic-ui-react'
 import './AddBeerForm.css'
 
 export default function AddBeerForm(props){
@@ -26,6 +26,8 @@ export default function AddBeerForm(props){
   }
 
   function handleSubmit(e){
+
+   
     e.preventDefault()
 
 
@@ -45,6 +47,8 @@ export default function AddBeerForm(props){
     props.handleAddPost(formData); // calling our function!
     
     // Have to submit the form now! We need a function!
+
+    
   }
 
 
@@ -69,12 +73,23 @@ export default function AddBeerForm(props){
   
 
   return (
-    
-    <Grid textAlign='center' style={{ height: '25vh' }} verticalAlign='middle'>
+
+      
+      <Grid textAlign='center' style={{ height: '25vh' }} verticalAlign='middle'>
+      
       <Grid.Column style={{ maxWidth: 450 }}>
         <Segment className="beerform">
         
             <Form  autoComplete="off" onSubmit={handleSubmit}>
+
+                {props.loading ? (
+                <div>
+                    <Dimmer active >
+                    <Loader size="medium" active inline='centered'>Adding Post...</Loader>
+                    </Dimmer>
+                    <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
+                </div>
+                ) : null} 
             
               <Form.Input
                   className="form-control"
@@ -140,6 +155,11 @@ export default function AddBeerForm(props){
               </Button>
             </Form>
           </Segment>
+
+     
+
+
+
       </Grid.Column>
     </Grid>
    

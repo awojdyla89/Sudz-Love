@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
-import { Button, Form, Grid, Header, Image, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Image, Segment, Message} from 'semantic-ui-react'
 import userService from '../../utils/userService';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import './SignupPage.css'
 
 
@@ -123,6 +123,10 @@ export default function SignUpPage(props){
                           Signup
                         </Button>
                         </Segment>
+                        <Message className="signupLink" >
+                        Already Have An Account? &nbsp;&nbsp;&nbsp; <Link to="/login" className="link">Log In</Link>
+                        </Message>
+
                         {error ? <ErrorMessage error={error} /> : null}
                       </Form>
                      

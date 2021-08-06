@@ -1,13 +1,22 @@
 
 import React from 'react';
-import { Card , Item } from 'semantic-ui-react'
+import { Card , Item, Loader, Dimmer, Segment, Image } from 'semantic-ui-react'
 import BeerCard from '../BeerCard/BeerCard';
 
 
-export default function BeerFeed({posts, isProfile, photowidth , user, addVote, removeVote, deletePost}){
+export default function BeerFeed({posts, isProfile, photowidth , user, addVote, removeVote, deletePost, loading}){
 
     return (
         <Card.Group itemsPerRow={photowidth} stackable>
+
+        {/* {loading ? (
+        <Segment>
+          <Dimmer active inverted>
+            <Loader size="small">Loading</Loader>
+          </Dimmer>
+          <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
+        </Segment>
+      ) : null} */}
            
                 {posts.map((post) => {
                 return ( 

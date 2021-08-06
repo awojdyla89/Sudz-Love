@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
@@ -15,6 +15,28 @@ function App() {
   // this object corresponds to the jwt payload which is defined in the server signup or login function that looks like 
   // this  const token = createJWT(user); // where user was the document we created from mongo
 
+
+  //---------------------------------
+  // const [loading, setLoading] = useState(true);
+
+  // function fakeRequest() {
+  //   return new Promise(resolve => setTimeout(() => resolve(), 2500));
+  // }
+
+  // useEffect(() => {
+  //   fakeRequest().then(() => {
+  //     const el = document.querySelector(".loader-container");
+  //     if (el) {
+  //       el.remove();
+  //       setLoading(!loading);
+  //     }
+  //   });
+  // }, []);
+
+  // if (loading) {
+  //   return null;
+  // }
+
   function handleSignUpOrLogin(){
     setUser(userService.getUser()) // getting the user from localstorage decoding the jwt
   }
@@ -29,6 +51,7 @@ function App() {
     width: '100%', 
     minHeight:'100vh',
     backgroundSize: "cover" }}>
+      
     
       <Switch>
           <Route exact path="/login">

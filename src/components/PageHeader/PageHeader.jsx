@@ -23,7 +23,7 @@ export default function PageHeader({user, handleLogout}){
 
 <Menu secondary pointing className="headerStyle">
 <Link style={{ fontSize: 20 }} to={`/${user.username}`} >
-    <Image size="tiny" avatar  src={user.photoUrl ? user.photoUrl : "favicon.ico"} ></Image>
+    <Image size="tiny"   src={user.photoUrl ? user.photoUrl : "favicon.ico"} ></Image>
 </Link>
 <Menu.Item>
     <Button as={Link} to={`/${user.username}`} inverted color="yellow">{user.username}'s Profile</Button>

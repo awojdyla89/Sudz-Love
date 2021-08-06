@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid} from "semantic-ui-react";
+import { Grid, Loader, Segment, Dimmer, Image} from "semantic-ui-react";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import AddBeerForm from '../../components/AddBeerForm/AddBeerForm';
 import BeerFeed from '../../components/BeerFeed/BeerFeed'; 
@@ -15,7 +15,7 @@ export default function MainPage({user, handleLogout}){
 
     async function handleAddPost (post){
    
-        console.log(post);
+        //console.log(post);
         setLoading(true);
         const data = await postsAPI.create(post);
         console.log(data.post, ' This is new BEER', data, ' data variable')
@@ -55,12 +55,14 @@ export default function MainPage({user, handleLogout}){
 
 
     async function deletePost(postId) {
+    
         try {
             await postsAPI.removePost(postId);
             getPosts();
         } catch (err) {
             console.log(err)
         }
+        
     }
 
       useEffect(() => {
@@ -78,7 +80,7 @@ export default function MainPage({user, handleLogout}){
 
       <div class="five wide column">
         <Grid.Column style={{ maxWidth: 450 }} >
-          <AddBeerForm handleAddPost={handleAddPost} />
+          <AddBeerForm handleAddPost={handleAddPost} loading={loading}/>
         </Grid.Column>
         </div>
 
