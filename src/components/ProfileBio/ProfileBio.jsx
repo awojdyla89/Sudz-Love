@@ -17,7 +17,7 @@ function ProfileBio({user}) {
       </Grid.Column>
 
         <Grid.Column>
-          <Image  src={`${user.photoUrl ? user.photoUrl : "https://react.semantic-ui.com/images/wireframe/square-image.png"} `} avatar size='small' />
+          <Image  size="medium"  avatar  src={`${user.photoUrl ? user.photoUrl : "favicon.ico"} `}  />
         </Grid.Column>
 
     </Grid.Row>

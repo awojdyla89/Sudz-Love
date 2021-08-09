@@ -122,7 +122,7 @@ export default function HomePage({ user, handleLogout }){
       {/* <Item.Image size='tiny' src='/images/wireframe/image.png' /> */}
 
       <Item.Content >
-        <Item.Header style={{color:"rgb(21, 91, 158)", fontSize: "23px"}} >{brewery.name}</Item.Header>
+        <Item.Header style={{color:"rgb(255, 192, 24)", fontSize: "23px"}} >{brewery.name}</Item.Header>
         <Item.Meta>
           <span><b>Address: </b> {brewery.street} <br />{brewery.city} , {brewery.state} <br />{brewery.postal_code} <br /> </span>
           <span><b>Phone: </b> {formatPhoneNumber(brewery.phone)} </span>
