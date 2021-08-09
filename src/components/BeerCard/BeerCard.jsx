@@ -16,7 +16,6 @@ function BeerCard({post, isProfile, user, addVote, removeVote, deletePost, loadi
           
   return (
 
-
     <Card key={post._id} className='beerCard' >
 
 {isProfile ? ( 
@@ -62,77 +61,3 @@ Buzz Count <Icon  name={'beer'} size='large' color={voteColor} onClick={clickHan
 }
 
 export default BeerCard;
-
-{/* <Card key={post._id}>
-{isProfile ? ( 
-    ""
-    ):(
-
-<Card.Content textAlign='left'>
-  <Image
-      floated='left'
-      size='medium'
-      avatar
-      src={post.user.photoUrl ? post.user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
-  />
-  <Card.Header floated="right">{post.user.username}</Card.Header>
-  
-</Card.Content>
-    )}
-
-<Image size="small" src={`${post.photoUrl}`} wrapped ui={false} />
-<Card.Content>
-<Card.Description>
-{post.caption}
-</Card.Description>
-</Card.Content>
-<Card.Content extra textAlign={'right'}>
-<Icon name={'beer'} size='large' color={likeColor} onClick={clickHandler} />
-{post.votes.length} Buzz Count
-</Card.Content>
-
-{posted ? (
-  
-  <Button color="red" onClick={delPostHandler}>Delete</Button>
-):(
-  ''
-)}
-
-</Card> */}
-
-{/* <Item key={post._id}>
-        {isProfile ? ( 
-            ""
-            ):(
-   
-      <Item.Content textAlign='left'>
-          <Image
-              floated='left'
-              size='medium'
-              avatar
-              src={post.user.photoUrl ? post.user.photoUrl : 'https://react.semantic-ui.com/images/wireframe/square-image.png'}
-          />
-          <Item.Header floated="right">{post.user.username}</Item.Header>
-          
-      </Item.Content>
-            )}
-  
-      <Image size="small" src={`${post.photoUrl}`} wrapped ui={false} />
-      <Item.Content>
-      <Item.Description>
-        {post.caption}
-      </Item.Description>
-      </Item.Content>
-      <Item.Content extra textAlign={'right'}>
-        <Icon name={'beer'} size='large' color={likeColor} onClick={clickHandler} />
-        {post.votes.length} Buzz Count
-      </Item.Content>
-      
-      {posted ? (
-          
-          <Button color="red" onClick={delPostHandler}>Delete</Button>
-      ):(
-          ''
-      )}
-      
-    </Item> */}

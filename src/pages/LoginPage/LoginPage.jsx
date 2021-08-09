@@ -46,7 +46,6 @@ export default function LoginPage(props){
         setLoading(false);
     }
     
-
     return (
         <>
         <Grid
@@ -70,11 +69,6 @@ export default function LoginPage(props){
                     <Image src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png" />
                 </div>
                 ) : null} 
-
-
-
-
-
 
               <Segment stacked className="loginPage">
                 <Form.Input

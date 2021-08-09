@@ -23,25 +23,6 @@ function create(req, res){
                 res.json({data: err})
             }
 
-           
-             //let today = new Date().toLocaleDateString();
-            // console.log("IN THE CREATE COINTROLLLLEEERRR!!!", today)
-            // let dd = today.getDate();
-
-            // let mm = today.getMonth()+1; 
-            // const yyyy = today.getFullYear();
-            // if(dd<10) 
-            // {
-            //     dd=`0${dd}`;
-            // } 
-
-            // if(mm<10) 
-            // {
-            //     mm=`0${mm}`;
-            // } 
-            // today = `${dd}/${mm}/${yyyy}`;
-
-            //req.body.postedDate = today
 
             const post = await Post.create({
                 favBeer: req.body.favBeer, 
@@ -79,19 +60,6 @@ async function index(req, res){
 
     }
 }
-
-// async function deletePost(req, res){
-//     console.log(req.params)
-//     try {
-//         const post = await Post.findByIdAndDelete(req.params.id);
-       
-//         console.log(post, 'this is the POST')
-//         res.status(201).json({post: post})
-//     } catch(err){
-//         console.log(err)
-//         res.json({data: err})
-//     }
-// }
 
 async function deletePost(req, res){
     try {

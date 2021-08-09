@@ -50,11 +50,6 @@ export default function AddBeerForm(props){
 
     
   }
-
-
- 
-
-
 //   const beerTypes = [
 //     { key: '0', text: 'Ale', value: 'Ale' },
 //     { key: '1', text: 'Lager', value: 'Lager' },
@@ -68,9 +63,6 @@ export default function AddBeerForm(props){
 //     { key: '9', text: 'Sour Ale', value: 'Sour Ale' },
 
 //   ]
-
- 
-  
 
   return (
 
