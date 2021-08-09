@@ -28,6 +28,7 @@ Whatever the reason may be you've come to the right place!
 * React
 * Node
 * Heroku
+* Open Brewery DB API
 
 
 ## Getting Started
