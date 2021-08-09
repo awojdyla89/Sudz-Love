@@ -81,6 +81,13 @@ export default function HomePage({ user, handleLogout }){
         return null;
       }
 
+      const handleClearInputField = () => {
+        
+        setUserInput("");
+        setStateInput("");
+        setCityInput("")
+        setBrewHouses([]);
+    };
 
   
 
@@ -124,8 +131,9 @@ export default function HomePage({ user, handleLogout }){
             inverted color="black"
             onClick={getBreweriesByName}
           >
-            Search For Brewery
+            Search By Name
           </Button>
+         
         </Form>
       </Segment>
       </Grid.Column>
@@ -162,8 +170,9 @@ export default function HomePage({ user, handleLogout }){
             inverted color="black"
             onClick={getBreweriesByState}
           >
-            Search For Brewery
+            Search By State
           </Button>
+        
         </Form>
       </Segment>
       </Grid.Column>
@@ -197,17 +206,22 @@ export default function HomePage({ user, handleLogout }){
             inverted color="black"
             onClick={getBreweriesByCity}
           >
-            Search For Brewery
+            Search By City
           </Button>
+  
         </Form>
       </Segment>
       </Grid.Column>
+      </Grid.Row>
 
-
-
-
-
-
+      <Grid.Row>
+      <Button
+            type="submit"
+             color="blue"
+            onClick={handleClearInputField}
+          >
+            Clear Search
+          </Button>
       </Grid.Row>
 
       <Grid.Row  columns={2}>
@@ -215,8 +229,6 @@ export default function HomePage({ user, handleLogout }){
 
       {brewHouses.map((brewery) => {
           return (
-
-
 
       <Item.Group style={{backgroundColor: "rgba(128, 128, 128, 0.633)", textAlign: "center", borderRadius: "25px", padding: "13px"}} >
           
@@ -235,7 +247,6 @@ export default function HomePage({ user, handleLogout }){
 
   </Item.Group>
  
-
     )
 })}
 </Grid.Column>

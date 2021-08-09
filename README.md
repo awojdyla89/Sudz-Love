@@ -2,7 +2,7 @@
 
 # Sudz Love
 Sometimes your so satisfied with a beer you can't help but want to tell people about it. 
-Maybe you can't remember the name of the beer the morning after.
+Maybe you can't remember the name of the beer the morning after...
 
 Whatever the reason may be you've come to the right place!
 - Post your beer and share it with the world.
