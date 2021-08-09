@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, Loader, Segment, Dimmer, Image} from "semantic-ui-react";
+import { Grid, Button, Loader, Segment, Dimmer, Image} from "semantic-ui-react";
+import {Link} from 'react-router-dom';
 import PageHeader from "../../components/PageHeader/PageHeader";
 import AddBeerForm from '../../components/AddBeerForm/AddBeerForm';
 import BeerFeed from '../../components/BeerFeed/BeerFeed'; 
@@ -75,9 +76,13 @@ export default function MainPage({user, handleLogout}){
       </Grid.Row>
 
       <div class="five wide column">
+
+        <div class="five wide column">
         <Grid.Column style={{ maxWidth: 450 }} >
           <AddBeerForm handleAddPost={handleAddPost} loading={loading}/>
         </Grid.Column>
+        </div>
+
         </div>
 
         <div >

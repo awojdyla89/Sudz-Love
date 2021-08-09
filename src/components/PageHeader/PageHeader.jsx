@@ -26,6 +26,14 @@ export default function PageHeader({user, handleLogout}){
 
 
 
+{/* ---------------------- */}
+<Menu.Item position="">
+    <Button as={Link} to="/search"  inverted color="green" ><Icon name="add"></Icon>
+      Search
+    </Button>
+  </Menu.Item>
+  {/* ---------------------- */}
+
   <Menu.Item position="right">
     <Button as={Link} to="/main" primary inverted color="blue" ><Icon name="add"></Icon>
       Beer Feed

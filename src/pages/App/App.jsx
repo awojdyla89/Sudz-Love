@@ -7,6 +7,7 @@ import userService from '../../utils/userService'
 import MainPage from '../MainPage/MainPage';
 import ProfilePage from "../ProfilePage/ProfilePage";
 import HomePage from "../HomePage/HomePage"
+import SearchPage from "../SearchPage/SearchPage"
 
 
 function App() {
@@ -38,6 +39,12 @@ function App() {
           <Route exact path="/signup">
              <SignupPage handleSignUpOrLogin={handleSignUpOrLogin}/>
           </Route>
+        {/* ------------------------------------- */}
+          <Route path="/search">
+              <SearchPage user={user} handleLogout={handleLogout} />
+          </Route>
+          {/* ------------------------------------- */}
+
           {userService.getUser() ? (
              
              <Switch>
@@ -50,6 +57,8 @@ function App() {
                 <Route path="/:username">
                     <ProfilePage user={user} handleLogout={handleLogout} />
                 </Route>
+                
+
             </Switch>
             
           ):(

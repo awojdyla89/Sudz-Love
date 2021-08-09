@@ -26,14 +26,9 @@ export default function AddBeerForm(props){
   }
 
   function handleSubmit(e){
-
-   
     e.preventDefault()
 
-
-
       let today = new Date();
-    // // console.log("TOOOODAAAYYYYYYYY!!!!!!!!_>___>_>_>_", today)
       state.postedDate = today
              
     const formData = new FormData()
@@ -45,24 +40,10 @@ export default function AddBeerForm(props){
     formData.append('aboutBeer', state.aboutBeer)
     
     props.handleAddPost(formData); // calling our function!
-    
     // Have to submit the form now! We need a function!
 
-    
   }
-//   const beerTypes = [
-//     { key: '0', text: 'Ale', value: 'Ale' },
-//     { key: '1', text: 'Lager', value: 'Lager' },
-//     { key: '2', text: 'Stout', value: 'Stout' },
-//     { key: '3', text: 'Blonde Ale', value: 'Blonde Ale' },
-//     { key: '4', text: 'Brown Ale', value: 'Brown Ale' },
-//     { key: '5', text: 'Pale Ale', value: 'Pale Ale' },
-//     { key: '6', text: 'Indian Pale Ale', value: 'Indian Pale Ale' },
-//     { key: '7', text: 'Wheat', value: 'Wheat' },
-//     { key: '8', text: 'Pilsner', value: 'Pilsner' },
-//     { key: '9', text: 'Sour Ale', value: 'Sour Ale' },
 
-//   ]
 
   return (
 
@@ -182,3 +163,17 @@ export default function AddBeerForm(props){
                 </Dropdown.Menu>
                 </Dropdown>
                </Menu>  */}
+
+               //   const beerTypes = [
+//     { key: '0', text: 'Ale', value: 'Ale' },
+//     { key: '1', text: 'Lager', value: 'Lager' },
+//     { key: '2', text: 'Stout', value: 'Stout' },
+//     { key: '3', text: 'Blonde Ale', value: 'Blonde Ale' },
+//     { key: '4', text: 'Brown Ale', value: 'Brown Ale' },
+//     { key: '5', text: 'Pale Ale', value: 'Pale Ale' },
+//     { key: '6', text: 'Indian Pale Ale', value: 'Indian Pale Ale' },
+//     { key: '7', text: 'Wheat', value: 'Wheat' },
+//     { key: '8', text: 'Pilsner', value: 'Pilsner' },
+//     { key: '9', text: 'Sour Ale', value: 'Sour Ale' },
+
+//   ]
