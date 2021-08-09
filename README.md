@@ -12,11 +12,13 @@ Whatever the reason may be you've come to the right place!
 ## Screenshots
 
 <img src="src/images/HomePage.png" width="800" height="510">
----
+
 <img src="src/images/Signup.png" width="800" height="510">
----
+
+<img src="src/images/Login.png" width="800" height="510">
+
 <img src="src/images/BeerFeed.png" width="800" height="510">
----
+
 <img src="src/images/SearchBrew.png" width="800" height="510">
 
 ## Technologies Used
