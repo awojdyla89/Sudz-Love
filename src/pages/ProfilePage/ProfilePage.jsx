@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {  Grid , Loader} from 'semantic-ui-react'
+import {  Grid , Loader, Segment} from 'semantic-ui-react'
 import ProfileBio from '../../components/ProfileBio/ProfileBio';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import BeerFeed from "../../components/BeerFeed/BeerFeed";
@@ -102,16 +102,19 @@ export default function ProfilePage({user, handleLogout}){
                 <PageHeader user={user} handleLogout={handleLogout}/>
               </Grid.Column>
             </Grid.Row>
+
             <Grid.Row>
               <Grid.Column>
                 <ProfileBio user={profileUser} />
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row centered>
-              <Grid.Column style={{ maxWidth: 750 }}>
+            
+            <div>
+            
+              <Grid.Column style={{ paddingLeft: "60px", maxWidth: 750, overflow: 'auto', maxHeight: 900 }}>
                 <BeerFeed 
                   isProfile={true}
-                  numPhotosCol={4}
+                  //numPhotosCol={4}
                   user={user}
                   posts={posts}
                   deletePost={deletePost}
@@ -120,7 +123,9 @@ export default function ProfilePage({user, handleLogout}){
                   removeVote={removeVote}
                 />
               </Grid.Column>
-            </Grid.Row>
+            
+
+            </div>
           </Grid>
         </>
       );
