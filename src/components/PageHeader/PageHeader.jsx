@@ -12,7 +12,7 @@ export default function PageHeader({user, handleLogout}){
     <Image size="tiny"   src={user.photoUrl ? user.photoUrl : "favicon.ico"} ></Image>
 </Link> */}
 <Menu.Item>
-    <Button as={Link} to={`/${user.username}`} inverted color="yellow">{user.username}'s Profile</Button>
+    <Button as={Link} to={`/${user.username}`} inverted color="yellow"><Icon name="user circle"></Icon>{user.username}'s Profile</Button>
     </Menu.Item>
 
 {/* <Menu.Item as={Link} to="/" style={{ fontSize: 15 }}>{user.username}'s <br /> Profile</Menu.Item> */}
@@ -39,8 +39,8 @@ export default function PageHeader({user, handleLogout}){
   </Menu.Item>
 
   <Menu.Item >
-    <Button as={Link} to="/search"  inverted color="green" ><Icon name="add"></Icon>
-      Search
+    <Button as={Link} to="/search"  inverted color="green" ><Icon name="search"></Icon>
+      Brewery Search
     </Button>
   </Menu.Item>
   
