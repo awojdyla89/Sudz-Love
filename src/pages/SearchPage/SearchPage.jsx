@@ -70,6 +70,13 @@ export default function HomePage({ user, handleLogout }){
     setCityInput(e.target.value)
   }
 
+  const handleClearInputField = () => {
+    
+    setUserInput("");
+    setStateInput("");
+    setCityInput("")
+    setBrewHouses([]);
+};
 
 
     function formatPhoneNumber(phoneNumber) {
@@ -81,13 +88,6 @@ export default function HomePage({ user, handleLogout }){
         return null;
       }
 
-      const handleClearInputField = () => {
-        
-        setUserInput("");
-        setStateInput("");
-        setCityInput("")
-        setBrewHouses([]);
-    };
 
   
 

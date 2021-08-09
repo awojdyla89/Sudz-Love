@@ -103,15 +103,12 @@ export default function ProfilePage({user, handleLogout}){
               </Grid.Column>
             </Grid.Row>
 
-            <Grid.Row>
-              <Grid.Column>
-                <ProfileBio user={profileUser} />
-              </Grid.Column>
-            </Grid.Row>
+            <Grid.Row columns={2}>
+             
+            
             
             <div>
-            
-              <Grid.Column style={{ paddingLeft: "60px", maxWidth: 750, overflow: 'auto', maxHeight: 900 }}>
+              <Grid.Column style={{ paddingLeft: "40px", maxWidth: 650, overflow: 'auto', maxHeight: 1000 }}>
                 <BeerFeed 
                   isProfile={true}
                   //numPhotosCol={4}
@@ -123,9 +120,14 @@ export default function ProfilePage({user, handleLogout}){
                   removeVote={removeVote}
                 />
               </Grid.Column>
-            
-
             </div>
+
+            <Grid.Column>
+                <ProfileBio user={profileUser} />
+              </Grid.Column>
+
+            </Grid.Row>
+
           </Grid>
         </>
       );
