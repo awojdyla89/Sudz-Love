@@ -1,39 +1,35 @@
-## Setup 
+![home](main_app/static/img/homepage.png)
 
-1. Clone the repo
-2. Rename the folder to your Project, you can use the `mv` command like `mv mern-boilerplate yourprojectname`
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+# Sudz Love
+Sometimes your so happy when drinking a fresh brew that you want to post how delicious it is. Well you can post a picture of your beer and tell a little info about. 
+When your done you can search for breweries and check out their website and maybe stop by for another cold one.
+
+## Screenshots
+
+![Home Page](main_app/static/img/trail_list.png)
+---
+![Beer Feed](main_app/static/img/add_trail.png)
+---
+![Search Brewery](main_app/static/img/trail_detail.png)
+
+## Technologies Used
+* Javascript/CSS/JSX
+* React.js
+* MongoDB
+* Node.js
+* Heroku
 
 
-#### Setup your git repo
+## Getting Started
+Check out Sudz Love here: [Sudz Love]()
 
-1. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-2.  Then follow the directions on github that says ```…or create a new repository on the command line```
+Check out my Trello board : [Sudz Love Trello]()
 
-it should look like this
 
-```
-git init
-git add .
-git commit -m "first commit"
-git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be
-git push -u origin master
-```
 
-#### Setup the App
-
-```npm install```
-
-*DOTENV*
-
-`touch .env`
-
-add your variables
-
-```
-DATABASE_URL=mongodb://localhost:27017/testagramV2
-BUCKET_NAME=catcollectorone
-SECRET=mysecretforjwt
-```
-
-The app is configured, to use those respective key names for the database, jwt secret and aws bucket, of course you'll have your own values
+## Future Features
+* Icons for each amenity, instead of a list
+* Search based on location and multiple amenities
+* A favorites page and the ability to bookmark a trail as a favorite
+* Ability to add photos to comments 
+* Map integration to show locations

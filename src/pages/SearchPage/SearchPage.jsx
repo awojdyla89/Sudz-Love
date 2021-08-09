@@ -85,11 +85,11 @@ export default function HomePage({ user, handleLogout }){
    
           <Form.Input
           type="text"
-              className="brewery-form"
-              name="aboutBeer"
+               className="brewery-form"
+               name="aboutBeer"
                value={userInput}
                placeholder="Search breweries.."
-              onChange={handleChange}
+               onChange={handleChange}
             //   required
           /> 
 
