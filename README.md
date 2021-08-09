@@ -1,16 +1,23 @@
-![home](main_app/static/img/homepage.png)
+
 
 # Sudz Love
-Sometimes your so happy when drinking a fresh brew that you want to post how delicious it is. Well you can post a picture of your beer and tell a little info about. 
-When your done you can search for breweries and check out their website and maybe stop by for another cold one.
+Sometimes your so satisfied with a beer you can't help but want to tell people about it. 
+Maybe you can't remember the name of the beer the morning after.
+
+Whatever the reason may be you've come to the right place!
+- Post your beer and share it with the world.
+- When its time to go brew hopping search for a brewery near by and check out whats on their menu.
+
 
 ## Screenshots
 
-![Home Page](main_app/static/img/trail_list.png)
+<img src="src/images/HomePage.png" width="800" height="510">
 ---
-![Beer Feed](main_app/static/img/add_trail.png)
+<img src="src/images/Signup.png" width="800" height="510">
 ---
-![Search Brewery](main_app/static/img/trail_detail.png)
+<img src="src/images/BeerFeed.png" width="800" height="510">
+---
+<img src="src/images/SearchBrew.png" width="800" height="510">
 
 ## Technologies Used
 * Javascript/CSS/JSX
@@ -27,9 +34,8 @@ Check out my Trello board : [Sudz Love Trello]()
 
 
 
-## Future Features
-* Icons for each amenity, instead of a list
-* Search based on location and multiple amenities
-* A favorites page and the ability to bookmark a trail as a favorite
-* Ability to add photos to comments 
-* Map integration to show locations
+## Next Steps
+* Implement an alternative third party API for searching beers.
+* Implement map integration to display breweries in the area.
+* Edit beer posts and profile page information.
+* Ability to comment beer posts.
