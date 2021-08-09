@@ -36,15 +36,25 @@ export default function HomePage({ user, handleLogout }){
     };
 
 
-        const brewArr = brewHouses.map((brewery) => (
-            <>
-            <li key={brewery.id}>
-                <h3>Name: {brewery.name}</h3>
-                <h3>City: {brewery.city}</h3>
-                <h3>State: {brewery.state}</h3>
-            </li>
-            </>
-        ))
+    function formatPhoneNumber(phoneNumber) {
+        var raw = ('' + phoneNumber).replace(/\D/g, '');
+        var match = raw.match(/^(\d{3})(\d{3})(\d{4})$/);
+        if (match) {
+          return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+        }
+        return null;
+      }
+
+
+        // const brewArr = brewHouses.map((brewery) => (
+        //     <>
+        //     <li key={brewery.id}>
+        //         <h3>Name: {brewery.name}</h3>
+        //         <h3>City: {brewery.city}</h3>
+        //         <h3>State: {brewery.state}</h3>
+        //     </li>
+        //     </>
+        // ))
   
     function handleChange(e){
       setUserInput(e.target.value)
@@ -114,8 +124,8 @@ export default function HomePage({ user, handleLogout }){
       <Item.Content >
         <Item.Header style={{color:"rgb(21, 91, 158)", fontSize: "23px"}} >{brewery.name}</Item.Header>
         <Item.Meta>
-          <span className='price'><b>Address: </b> {brewery.street} <br />{brewery.city} , {brewery.state} <br />{brewery.postal_code} </span>
-          <span className='stay'></span>
+          <span><b>Address: </b> {brewery.street} <br />{brewery.city} , {brewery.state} <br />{brewery.postal_code} <br /> </span>
+          <span><b>Phone: </b> {formatPhoneNumber(brewery.phone)} </span>
         </Item.Meta>
         <Item.Description>  <a href={brewery.website_url}><Button  inverted color="olive">{brewery.name} Website
     </Button></a>
@@ -125,46 +135,12 @@ export default function HomePage({ user, handleLogout }){
 
   </Item.Group>
  
-  
-
 
     )
 })}
 </Grid.Column>
-
       </Grid.Row>
-
-
-{/* {posts.map((post) => {
-                return ( 
-                        <BeerCard  
-                            key={post._id} 
-                            post={post}
-                            user={user}
-                            photowidth={2}
-                            addVote={addVote}
-                            removeVote={removeVote}
-                            deletePost={deletePost}
-                            isProfile={isProfile}
-                            loading={loading}
-                            />
-                    )
-                })} */}
-
-     
-
   </Grid>
-
-
-
-
-
-
-
-
-
-
-
 
     )
 }
