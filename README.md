@@ -23,16 +23,17 @@ Whatever the reason may be you've come to the right place!
 
 ## Technologies Used
 * Javascript/CSS/JSX
-* React.js
-* MongoDB
-* Node.js
+* MongoDB/Mongoose
+* Express
+* React
+* Node
 * Heroku
 
 
 ## Getting Started
 Check out Sudz Love here: [Sudz Love]()
 
-Check out my Trello board : [Sudz Love Trello]()
+Check out my Trello board : [Sudz Love Trello](https://trello.com/b/gSR8OJf1)
 
 
 
