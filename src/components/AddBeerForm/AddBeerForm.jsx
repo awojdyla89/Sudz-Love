@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./AddBeerForm.css";
 import {
   Button,
   Form,
@@ -8,7 +9,6 @@ import {
   Loader,
   Image,
 } from "semantic-ui-react";
-import "./AddBeerForm.css";
 
 export default function AddBeerForm(props) {
   const [selectedFile, setSelectedFile] = useState("");
@@ -45,8 +45,7 @@ export default function AddBeerForm(props) {
     formData.append("postedDate", state.postedDate);
     formData.append("aboutBeer", state.aboutBeer);
 
-    props.handleAddPost(formData); // calling our function!
-    // Have to submit the form now! We need a function!
+    props.handleAddPost(formData);
   }
 
   return (

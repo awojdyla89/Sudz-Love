@@ -11,10 +11,8 @@ export default function MainPage({ user, handleLogout }) {
   const [loading, setLoading] = useState(false);
 
   async function handleAddPost(post) {
-    //console.log(post);
     setLoading(true);
     const data = await postsAPI.create(post);
-    //console.log(data.post, ' This is new BEER', data, ' data variable')
     setPosts((posts) => [data.post, ...posts]);
     setLoading(false);
   }

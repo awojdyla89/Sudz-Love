@@ -1,6 +1,6 @@
 import React from "react";
-import PageHeader from "../../components/PageHeader/PageHeader";
 import { Grid } from "semantic-ui-react";
+import PageHeader from "../../components/PageHeader/PageHeader";
 import "./HomePage.css";
 
 export default function HomePage({ user, handleLogout }) {

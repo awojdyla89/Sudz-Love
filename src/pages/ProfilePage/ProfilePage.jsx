@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Grid, Loader } from "semantic-ui-react";
+import { useParams } from "react-router-dom";
 import ProfileBio from "../../components/ProfileBio/ProfileBio";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import BeerFeed from "../../components/BeerFeed/BeerFeed";
 import userService from "../../utils/userService";
-
-import { useParams } from "react-router-dom";
 import * as postsAPI from "../../utils/postApi";
 import * as votesAPI from "../../utils/votesApi";
 
@@ -14,17 +13,11 @@ export default function ProfilePage({ user, handleLogout }) {
   const [profileUser, setProfileUser] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-
   const { username } = useParams();
 
   async function getProfile() {
     try {
       const data = await userService.getProfile(username);
-      console.log(data, " data");
-
-      // data is the response from the controller function /api/users/profile
-      // go to the controller function and look at what is returned
-      // posts and user are the properties on the data object
       setLoading(() => false);
       setPosts(() => [...data.posts]);
       setProfileUser(() => data.user);
@@ -37,7 +30,6 @@ export default function ProfilePage({ user, handleLogout }) {
   async function addVote(postId) {
     try {
       const data = await votesAPI.create(postId);
-      console.log(data, " this is from addVote() Mainpage");
       getProfile();
     } catch (err) {
       console.log(err);

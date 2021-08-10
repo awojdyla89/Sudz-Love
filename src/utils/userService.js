@@ -2,26 +2,16 @@ import tokenService from "./tokenService";
 
 const BASE_URL = "/api/users/";
 
-// NOTE THIS IS configured to send of a multi/part form request
-// aka photo
 function signup(user) {
-  return (
-    fetch(BASE_URL + "signup", {
-      method: "POST",
-      body: user,
+  return fetch(BASE_URL + "signup", {
+    method: "POST",
+    body: user,
+  })
+    .then((res) => {
+      if (res.ok) return res.json();
+      throw new Error("Email already taken!");
     })
-      .then((res) => {
-        if (res.ok) return res.json();
-        // Probably a duplicate email
-        throw new Error("Email already taken!");
-      })
-      // Parameter destructuring!
-      .then(({ token }) => tokenService.setToken(token))
-  );
-  // Setting our token in localStorage in our browser
-  // then we'll be able to use with every request!
-  // The above could have been written as
-  //.then((token) => token.token);
+    .then(({ token }) => tokenService.setToken(token));
 }
 
 function getUser() {
@@ -39,7 +29,6 @@ function login(creds) {
     body: JSON.stringify(creds),
   })
     .then((res) => {
-      // Valid login if we have a status of 2xx (res.ok)
       if (res.ok) return res.json();
       throw new Error("Bad Credentials!");
     })

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { useHistory, Link } from "react-router-dom";
+import userService from "../../utils/userService";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import "./SignupPage.css";
 import {
   Button,
   Form,
@@ -11,9 +14,6 @@ import {
   Dimmer,
   Loader,
 } from "semantic-ui-react";
-import userService from "../../utils/userService";
-import { useHistory, Link } from "react-router-dom";
-import "./SignupPage.css";
 
 export default function SignUpPage(props) {
   const [selectedFile, setSelectedFile] = useState("");
@@ -31,32 +31,20 @@ export default function SignUpPage(props) {
 
   async function handleSubmit(e) {
     setLoading(true);
-
     e.preventDefault();
-
     const formData = new FormData();
     formData.append("photo", selectedFile);
 
     for (let fieldName in state) {
-      //console.log(fieldName, state[fieldName]);
-      // append the rest of the data to the form obejct
       formData.append(fieldName, state[fieldName]);
     }
 
     try {
-      console.log(formData.forEach((item) => console.log(item)));
-
-      // use the userService to make the fetch request
+      //console.log(formData.forEach((item) => console.log(item)));
       await userService.signup(formData);
-
-      // Route to wherever you want!
-      // after you get a response from the server from
-      // the signup request, you need to grab the token from
-      // local storage and set the user!
       props.handleSignUpOrLogin();
       history.push("/");
     } catch (err) {
-      // Invalid user data (probably duplicate email)
       console.log(err.message);
       setError(err.message);
     }
@@ -64,7 +52,6 @@ export default function SignUpPage(props) {
   }
 
   function handleFileInput(e) {
-    //console.log("BIO Photo File:-->", e.target.files)
     setSelectedFile(e.target.files[0]);
   }
 
