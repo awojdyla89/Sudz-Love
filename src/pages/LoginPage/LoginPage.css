@@ -1,19 +1,18 @@
-.ui.segment.loginPage{
-    background-color: rgba(25, 87, 145, 0.637);
+.ui.segment.loginPage {
+  background-color: rgba(25, 87, 145, 0.637);
 }
 
-.ui.message.signupLink{
-    background-color: rgba(70, 56, 56, 0.527);
-    font-family: sans-serif;
-    font-weight: bolder;
-    font-size: 15px;
-    color: rgb(245, 245, 248);
-
+.ui.message.signupLink {
+  background-color: rgba(70, 56, 56, 0.527);
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: 15px;
+  color: rgb(245, 245, 248);
 }
 
 .link {
-    color: rgb(124, 230, 54);
-  }
-  .link:hover {
-     color: rgb(123, 123, 248)
-  }
+  color: rgb(124, 230, 54);
+}
+.link:hover {
+  color: rgb(123, 123, 248);
+}

@@ -1,9 +1,7 @@
-
-h1{
-    font-family: 'Brush Script MT', cursive;
+h1 {
+  font-family: "Brush Script MT", cursive;
 }
 
-.ui.menu.headerStyle{
-    background-color: rgba(2, 1, 1, 0.418);
-    
+.ui.menu.headerStyle {
+  background-color: rgba(2, 1, 1, 0.418);
 }

@@ -1,12 +1,13 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const votesSchema = mongoose.Schema({
   username: String,
-  userId: { type: mongoose.Schema.Types.ObjectId }
-})
+  userId: { type: mongoose.Schema.Types.ObjectId },
+});
 
-const postSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+const postSchema = new mongoose.Schema(
+  {
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     photoUrl: String,
     favBeer: String,
     abv: String,
@@ -15,26 +16,7 @@ const postSchema = new mongoose.Schema({
     postedDate: Date,
     votes: [votesSchema],
   },
-  {timestamps: true}
-  )
- 
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('Post', postSchema);
-
-// {
-//   type: String,
-//   enum: [
-//     '',
-//     'Ale',
-//     'Lager',
-//     'Stout',
-//     'Blonde Ale',
-//     'Brown Ale',
-//     'Pale Ale',
-//     'Indian Pale Ale',
-//     'Wheat',
-//     'Pilsner',
-//     'Sour Ale',
-
-//   ]
-// }
+module.exports = mongoose.model("Post", postSchema);

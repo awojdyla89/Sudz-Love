@@ -1,18 +1,18 @@
-  
 .homePage {
-    text-align: center;
-    margin-top: 50px;
-    margin-left: 210px;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 210px;
 }
 
 .title {
-    font-size: 80px;
-    text-shadow: -2px 1px 2px orange;
-    color: rgba(18, 19, 3, 0.664);
+  font-size: 80px;
+  text-shadow: -2px 1px 2px orange;
+  color: rgba(18, 19, 3, 0.664);
 }
 
 .backgroundimg {
-    width: 100%;
-    min-height:100vh;
-    background-size: cover;     background-image: url("../../images/background.jpeg");
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-image: url("../../images/background.jpeg");
 }

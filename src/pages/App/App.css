@@ -1,7 +1,7 @@
 .App {
   text-align: center;
-   background-color: rgba(10, 8, 8, 0.925); 
-  }
+  background-color: rgba(10, 8, 8, 0.925);
+}
 
 .App-logo {
   height: 40vmin;
@@ -37,5 +37,3 @@
     transform: rotate(360deg);
   }
 }
-
-
