@@ -228,12 +228,15 @@ export default function HomePage({ user, handleLogout }) {
         >
           {brewHouses.map((brewery) => {
             return (
+
+              
               <Item.Group
                 style={{
                   backgroundColor: "rgba(128, 128, 128, 0.633)",
                   textAlign: "center",
                   borderRadius: "25px",
                   padding: "13px",
+                  
                 }}
               >
                 <Item>
@@ -244,12 +247,12 @@ export default function HomePage({ user, handleLogout }) {
                       {brewery.name}
                     </Item.Header>
                     <Item.Meta>
-                      <span>
+                      <span style={{color: "ivory"}}>
                         <b>Address: </b> {brewery.street} <br />
                         {brewery.city} , {brewery.state} <br />
                         {brewery.postal_code} <br />{" "}
                       </span>
-                      <span>
+                      <span style={{color: "ivory"}}>
                         <b>Phone: </b> {formatPhoneNumber(brewery.phone)}{" "}
                       </span>
                     </Item.Meta>
@@ -264,6 +267,7 @@ export default function HomePage({ user, handleLogout }) {
                   </Item.Content>
                 </Item>
               </Item.Group>
+              
             );
           })}
         </Grid.Column>
