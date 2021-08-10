@@ -5,7 +5,7 @@ Sometimes your so satisfied with a beer you can't help but want to tell people a
 Maybe you can't remember the name of the beer the morning after...
 
 Whatever the reason may be you've come to the right place!
-- Post your beer and share it with the world on one convinient app.
+- Post your beer and share it with the world on one convenient app.
 - When its time to go brew hopping search for a brewery near, give them a call or check out their menu.
 
 
@@ -26,7 +26,7 @@ Whatever the reason may be you've come to the right place!
 * MongoDB/Mongoose
 * Express
 * React
-* Node
+* NodeJS
 * Heroku
 * Open Brewery DB API
 
